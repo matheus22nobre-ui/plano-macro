@@ -99,14 +99,14 @@
 
   /* ---- quick facts strip ---- */
   .facts{
-    display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+    display:flex;flex-wrap:wrap;
     gap:1px;background:var(--line);
     border:1px solid var(--line);
     margin-block:22px;
   }
-  .fact{background:var(--surface);padding:14px 16px;}
+  .fact{background:var(--surface);padding:14px 16px;flex:1 1 200px;min-width:0;}
   .fact .k{font-family:"Montserrat",sans-serif;font-size:10.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:5px;}
-  .fact .v{font-size:14.5px;font-weight:600;color:var(--text);}
+  .fact .v{font-size:14.5px;font-weight:600;color:var(--text);overflow-wrap:break-word;}
   .fact .v a{color:var(--accent);text-decoration:none;border-bottom:1px solid var(--accent);}
   .fact.is-new .v{color:var(--accent);}
 
@@ -130,7 +130,7 @@
   .sec-head{display:flex;align-items:baseline;gap:14px;margin-bottom:18px;flex-wrap:wrap;}
   .sec-num{font-family:"Montserrat",sans-serif;font-weight:700;color:var(--accent);font-size:13px;letter-spacing:.05em;}
   section h2{font-size:clamp(23px,3.6vw,29px);margin:0;}
-  .sec-desc{color:var(--text-soft);font-size:14.5px;max-width:62ch;margin-top:-6px;margin-bottom:20px;}
+  .sec-desc{color:var(--text-soft);font-size:15px;max-width:62ch;margin-top:-6px;margin-bottom:20px;}
 
   p{color:var(--text-soft);}
   strong{color:var(--text);}
@@ -141,10 +141,10 @@
   @media (max-width:640px){.grid2,.grid3{grid-template-columns:1fr;}}
 
   .card{background:var(--surface);padding:18px 20px;}
-  .card h3{font-size:14px;margin:0 0 10px;font-family:"Montserrat",sans-serif;font-weight:700;letter-spacing:.02em;text-transform:uppercase;color:var(--text);}
+  .card h3{font-size:15.5px;line-height:1.35;margin:0 0 8px;font-family:"Montserrat",sans-serif;font-weight:600;letter-spacing:0;text-transform:none;color:var(--text);}
   .card ul{margin:0;padding-left:16px;}
-  .card li{margin-bottom:6px;font-size:13.5px;color:var(--text-soft);}
-  .card p{font-size:13.5px;margin:0;}
+  .card li{margin-bottom:6px;font-size:14px;color:var(--text-soft);}
+  .card p{font-size:14px;margin:0;}
   .card p + p{margin-top:8px;}
 
   .tag{
@@ -214,9 +214,9 @@
   @media (max-width:640px){.stats{grid-template-columns:repeat(2,1fr);}}
   .stat{background:var(--surface);padding:18px 16px;}
   .stat .num{font-family:"Tenor Sans",serif;font-size:27px;color:var(--accent);font-variant-numeric:tabular-nums;}
-  .stat .lbl{font-size:11.5px;color:var(--muted);margin-top:4px;font-family:"Montserrat",sans-serif;}
+  .stat .lbl{font-size:12.5px;color:var(--muted);margin-top:4px;font-family:"Montserrat",sans-serif;}
 
-  table{width:100%;border-collapse:collapse;font-size:13.5px;}
+  table{width:100%;border-collapse:collapse;font-size:14px;}
   .tbl-wrap{overflow-x:auto;border:1px solid var(--line);}
   th,td{text-align:left;padding:11px 14px;border-bottom:1px solid var(--line);vertical-align:top;}
   th{font-family:"Montserrat",sans-serif;font-size:10.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);background:var(--surface-2);}
@@ -236,16 +236,19 @@
   .callout p + p{margin-top:8px;color:var(--text-soft);font-size:13.5px;}
 
   /* ---- plano macro ---- */
-  .sub-h{font-size:15px;margin:26px 0 10px;font-family:"Montserrat",sans-serif;font-weight:700;text-transform:uppercase;letter-spacing:.02em;}
+  .sub-h{font-size:18px;line-height:1.3;margin:32px 0 12px;font-family:"Montserrat",sans-serif;font-weight:600;letter-spacing:0;text-transform:none;color:var(--text);}
   .swot{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border:1px solid var(--line);}
   @media (max-width:640px){.swot{grid-template-columns:1fr;}}
-  .swot .card h3{display:flex;align-items:center;gap:8px;}
+  .swot .card{border-top:3px solid var(--line);}
+  .swot .card.is-pos{border-top-color:var(--accent);}
+  .swot .card.is-neg{border-top-color:var(--text);}
+  .swot .card h3{font-size:17px;margin-bottom:12px;}
 
   .statement{background:var(--surface-2);border-left:3px solid var(--accent);padding:20px 24px;}
   .statement p{font-family:"Tenor Sans",Georgia,serif;font-size:19px;line-height:1.45;color:var(--text);margin:0;}
   .statement-foot{margin-top:12px;font-size:13px;color:var(--text-soft);}
-  .statement.is-accent{background:var(--accent);border-left-color:var(--accent);}
-  .statement.is-accent p,.statement.is-accent .statement-foot,.statement.is-accent strong{color:var(--on-accent);}
+  .statement.is-accent{background:var(--text);border-left-color:var(--accent);}
+  .statement.is-accent p,.statement.is-accent .statement-foot,.statement.is-accent strong{color:var(--bg);}
 
   .funnel{display:flex;flex-wrap:wrap;gap:6px;align-items:center;}
   .funnel .step{
@@ -259,7 +262,8 @@
   .strategy-head h3{font-size:20px;margin:0;}
   .strategy > p{font-size:14px;margin:0 0 14px;}
 
-  .pillars{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1px;background:var(--line);border:1px solid var(--line);}
+  .pillars{display:flex;flex-wrap:wrap;gap:1px;background:var(--line);border:1px solid var(--line);}
+  .pillars > .card{flex:1 1 250px;}
   .pillars .hook{margin-top:10px;font-style:italic;color:var(--text);}
 
   .fixados{display:flex;flex-direction:column;gap:16px;}
@@ -277,8 +281,9 @@
 
   .platform.is-now{box-shadow:inset 0 3px 0 var(--accent);}
 
-  .criteria{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1px;background:var(--line);border:1px solid var(--line);margin-bottom:22px;}
-  .criteria.is-3{grid-template-columns:repeat(auto-fit,minmax(240px,1fr));}
+  .criteria{display:flex;flex-wrap:wrap;gap:1px;background:var(--line);border:1px solid var(--line);margin-bottom:22px;}
+  .criteria > .card{flex:1 1 300px;}
+  .criteria.is-3 > .card{flex-basis:240px;}
   .crit-n{display:block;font-family:"Tenor Sans",Georgia,serif;font-size:26px;color:var(--accent);margin-bottom:6px;}
   .criteria .card h3{text-transform:none;font-size:14.5px;letter-spacing:0;}
 
@@ -292,12 +297,12 @@
   .rota-metrics > div{background:var(--surface-2);padding:12px 14px;}
   .rota-metrics .k,.rota-box .k,.proj .k,.months .k{font-family:"Montserrat",sans-serif;font-size:10.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:5px;}
   .rota-metrics .v{font-size:14px;font-weight:600;color:var(--text);}
-  .rota h4{font-family:"Montserrat",sans-serif;font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.03em;color:var(--text);margin:16px 0 6px;}
-  .rota p,.rota li{font-size:13.5px;}
+  .rota h4{font-family:"Montserrat",sans-serif;font-size:10.5px;font-weight:700;text-transform:uppercase;letter-spacing:.09em;color:var(--muted);margin:20px 0 6px;}
+  .rota p,.rota li{font-size:14px;}
   .rota ul{margin:0;padding-left:18px;color:var(--text-soft);}
   .rota-box{border:1px solid var(--warn-line);background:var(--warn-bg);padding:12px 16px;margin-top:14px;}
   .rota-box.is-accent{border-color:var(--accent);}
-  .rota-box p{margin:0;}
+  .rota-box p{margin:0;font-size:14px;}
 
   .proj{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border:1px solid var(--line);}
   @media (max-width:640px){.proj{grid-template-columns:1fr;}}
@@ -323,7 +328,8 @@
   body{padding-inline:0;}
   .layout{display:grid;grid-template-columns:240px minmax(0,1fr);max-width:1200px;margin-inline:auto;}
   .side{position:sticky;top:0;align-self:start;height:100vh;overflow-y:auto;padding:28px 22px;border-right:1px solid var(--line);}
-  .side-brand{font-family:"Tenor Sans",Georgia,serif;font-size:19px;letter-spacing:.04em;color:var(--text);}
+  .side-logo{display:block;width:150px;color:var(--text);margin-bottom:16px;}
+  .side-logo svg{display:block;width:100%;height:auto;}
   .side-client{font-family:"Montserrat",sans-serif;font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin:6px 0 26px;}
   .tabs-nav{display:flex;flex-direction:column;gap:2px;}
   .tabs-nav a{display:flex;gap:10px;align-items:baseline;padding:9px 10px;text-decoration:none;color:var(--text-soft);font-family:"Montserrat",sans-serif;font-size:13.5px;font-weight:600;border-left:2px solid transparent;}
@@ -338,7 +344,7 @@
   .js .tab{display:none;}
   .js .tab.is-active{display:block;}
   .tab-head{padding-block:36px 8px;border-bottom:1px solid var(--line);}
-  .tab-num{font-family:"Montserrat",sans-serif;font-weight:700;font-size:12px;letter-spacing:.14em;color:var(--accent);}
+  .tab-num{font-family:"Montserrat",sans-serif;font-weight:700;font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);}
   .tab-head h1{font-size:clamp(30px,4.6vw,42px);line-height:1.08;margin:6px 0 10px;}
   .tab-head p{font-size:15px;max-width:62ch;margin:0 0 20px;}
   .tab-toc{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 22px;}
@@ -356,12 +362,14 @@
   .cover-strip{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:18px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding-block:18px;}
   .cover-strip .k{font-family:"Montserrat",sans-serif;font-size:10.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:4px;}
   .cover-strip .v{font-family:"Tenor Sans",Georgia,serif;font-size:17px;color:var(--text);}
-  .toc{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:1px;background:var(--line);border:1px solid var(--line);margin-bottom:24px;}
-  .toc a{background:var(--surface);padding:16px 18px;text-decoration:none;display:grid;grid-template-columns:auto 1fr;gap:2px 12px;}
+  .toc{display:flex;flex-direction:column;border-top:1px solid var(--line);margin-bottom:26px;}
+  .toc a{display:grid;grid-template-columns:52px 1fr auto;gap:2px 16px;align-items:center;padding:14px 6px;border-bottom:1px solid var(--line);text-decoration:none;transition:background .15s;}
   .toc a:hover{background:var(--surface-2);}
   .toc span{grid-row:span 2;font-family:"Tenor Sans",Georgia,serif;font-size:22px;color:var(--accent);}
-  .toc b{font-family:"Montserrat",sans-serif;font-size:14px;color:var(--text);}
-  .toc em{font-style:normal;font-size:13px;color:var(--text-soft);}
+  .toc b{font-family:"Montserrat",sans-serif;font-weight:600;font-size:15.5px;color:var(--text);}
+  .toc em{grid-column:2;font-style:normal;font-size:13.5px;color:var(--text-soft);}
+  .toc a::after{content:"→";grid-column:3;grid-row:1 / span 2;color:var(--muted);font-family:"Montserrat",sans-serif;}
+  .toc a:hover::after{color:var(--accent);}
   .btn{display:inline-block;background:var(--accent);color:var(--on-accent);text-decoration:none;font-family:"Montserrat",sans-serif;font-weight:700;font-size:13px;letter-spacing:.03em;padding:13px 20px;}
 
   /* roteiros */
@@ -372,15 +380,55 @@
   table.script td:nth-child(2){color:var(--text);}
 
   /* comercial */
-  .objections{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1px;background:var(--line);border:1px solid var(--line);}
+  .objections{display:flex;flex-wrap:wrap;gap:1px;background:var(--line);border:1px solid var(--line);}
+  .objections > .card{flex:1 1 270px;}
   .objections .card h3{text-transform:none;font-family:"Tenor Sans",Georgia,serif;font-weight:400;font-size:17px;letter-spacing:0;}
 
   @media (max-width:900px){
     .layout{grid-template-columns:1fr;}
     .side{position:sticky;top:0;z-index:5;height:auto;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 16px;border-right:none;border-bottom:1px solid var(--line);background:var(--bg);}
     .side-client,.tabs-nav{display:none;}
+    .side-logo{width:112px;margin:0;}
     .tabs-select{display:block;max-width:62vw;font-family:"Montserrat",sans-serif;font-size:13px;font-weight:600;padding:8px 10px;border:1px solid var(--line);background:var(--surface);color:var(--text);}
     .main{padding:0 16px 32px;}
+  }
+
+  /* ---- revisão: componentes ---- */
+  @media (min-width:901px) and (min-height:780px){
+    .side::after{content:"";position:absolute;left:22px;bottom:26px;width:150px;height:132px;pointer-events:none;
+      background-image:radial-gradient(circle,var(--text) 1.05px,transparent 1.45px);background-size:9px 9px;
+      clip-path:polygon(50% 0,100% 100%,0 100%);
+      -webkit-mask-image:linear-gradient(to top,#000 0%,rgba(0,0,0,.35) 50%,transparent 100%);
+              mask-image:linear-gradient(to top,#000 0%,rgba(0,0,0,.35) 50%,transparent 100%);
+      opacity:.2;}
+  }
+  .decisions{border-top:2px solid var(--text);margin:6px 0 8px;counter-reset:dec;}
+  .decision{display:grid;grid-template-columns:52px 1fr;gap:3px 16px;padding:16px 0;border-bottom:1px solid var(--line);}
+  .decision::before{counter-increment:dec;content:counter(dec,decimal-leading-zero);grid-row:span 2;font-family:"Tenor Sans",Georgia,serif;font-size:26px;line-height:1.1;color:var(--accent);}
+  .decision b{font-family:"Montserrat",sans-serif;font-weight:600;font-size:16.5px;color:var(--text);}
+  .decision span{font-size:14.5px;color:var(--text-soft);}
+  .kicker{display:block;font-family:"Montserrat",sans-serif;font-size:10.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:5px;}
+  span.status{display:inline-block;margin-left:8px;padding:2px 7px;font-family:"Montserrat",sans-serif;font-size:10px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;border:1px solid var(--line);color:var(--muted);vertical-align:2px;}
+  span.status.is-done{border-color:var(--accent);color:var(--accent);}
+  .glossary{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:0 28px;margin:0;}
+  .glossary > div{padding:12px 0;border-bottom:1px solid var(--line);}
+  .glossary dt{font-family:"Montserrat",sans-serif;font-weight:600;font-size:14.5px;color:var(--text);}
+  .glossary dd{margin:2px 0 0;font-size:14px;color:var(--text-soft);}
+  a:focus-visible,select:focus-visible{outline:2px solid var(--accent);outline-offset:2px;}
+  section{scroll-margin-top:12px;}
+  @media (max-width:900px){ section{scroll-margin-top:76px;} }
+  /* no celular, toda tabela vira uma pilha de cartões (rótulos vêm do cabeçalho, via script) */
+  @media (max-width:640px){
+    .tbl-wrap{border:none;overflow:visible;}
+    .tbl-wrap table,.tbl-wrap tbody,.tbl-wrap tr,.tbl-wrap td{display:block;width:100%;}
+    .tbl-wrap thead{display:none;}
+    .tbl-wrap tr{border:1px solid var(--line);background:var(--surface);padding:12px 14px;margin-bottom:8px;}
+    .tbl-wrap td{border:none;padding:3px 0;}
+    .tbl-wrap td:empty{display:none;}
+    .tbl-wrap td.name{font-size:15px;padding-bottom:4px;}
+    .tbl-wrap td[data-label]:not(.name)::before{content:attr(data-label);display:block;margin-top:6px;font-family:"Montserrat",sans-serif;font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);}
+    .decision{grid-template-columns:40px 1fr;}
+    .toc a{grid-template-columns:40px 1fr auto;gap:2px 12px;}
   }
 
   /* PDF / impressão: todas as abas em sequência, sem menu */
@@ -404,7 +452,7 @@
 <div class="layout">
 
   <aside class="side">
-    <div class="side-brand">ELEVARE</div>
+    <a class="side-logo" href="#inicio"><svg role="img" aria-label="ELEVARE Business Group" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="573 368 309 79.5"><defs><g/><clipPath id="11576bdf47"><path d="M 698 375 L 732 375 L 732 413 L 698 413 Z M 698 375 " clip-rule="nonzero"/></clipPath><clipPath id="4aea36ff11"><path d="M 731.539062 412.058594 L 699.148438 412.292969 L 698.886719 375.980469 L 731.277344 375.75 Z M 731.539062 412.058594 " clip-rule="nonzero"/></clipPath><clipPath id="0f09a3b431"><path d="M 715.34375 412.175781 L 698.886719 375.988281 L 731.277344 375.753906 Z M 715.34375 412.175781 " clip-rule="nonzero"/></clipPath><clipPath id="84e6c9b559"><path d="M 738.585938 386.847656 L 770.976562 386.847656 L 770.976562 423.160156 L 738.585938 423.160156 Z M 738.585938 386.847656 " clip-rule="nonzero"/></clipPath><clipPath id="5523d27120"><path d="M 754.78125 386.847656 L 770.976562 423.152344 L 738.585938 423.152344 Z M 754.78125 386.847656 " clip-rule="nonzero"/></clipPath></defs><g fill="currentColor" fill-opacity="1"><g transform="translate(693.653809, 422.622421)"><g><path d="M 2 -46.84375 L 21.609375 0 L 25.625 0 L 44.640625 -46.84375 L 41.15625 -46.84375 L 25.5625 -8.296875 L 25.296875 -8.296875 L 9.234375 -46.84375 Z M 2 -46.84375 "/></g></g></g><g fill="currentColor" fill-opacity="1"><g transform="translate(730.38927, 422.622421)"><g><path d="M 34.0625 -13.78125 L 40.484375 0 L 46.984375 0 L 25.15625 -46.84375 L 21.8125 -46.84375 L 2 0 L 5.09375 0 L 10.96875 -13.78125 Z M 32.65625 -16.796875 L 12.25 -16.796875 L 21.890625 -39.34375 L 22.15625 -39.34375 Z M 32.65625 -16.796875 "/></g></g></g><g fill="currentColor" fill-opacity="1"><g transform="translate(775.796731, 422.241609)"><g><path d="M 8.03125 -46.84375 L 8.03125 0 L 14.125 0 L 14.125 -20.671875 L 17.0625 -20.671875 C 18.3125 -20.671875 19.347656 -20.5625 20.171875 -20.34375 C 21.003906 -20.125 21.753906 -19.742188 22.421875 -19.203125 C 23.085938 -18.671875 23.707031 -17.976562 24.28125 -17.125 C 24.863281 -16.28125 25.5625 -15.234375 26.375 -13.984375 L 31.65625 -6.15625 C 32.320312 -5.132812 32.976562 -4.195312 33.625 -3.34375 C 34.269531 -2.5 34.972656 -1.773438 35.734375 -1.171875 C 36.492188 -0.566406 37.351562 -0.0859375 38.3125 0.265625 C 39.269531 0.617188 40.421875 0.796875 41.765625 0.796875 C 42.742188 0.796875 43.546875 0.75 44.171875 0.65625 C 44.796875 0.570312 45.421875 0.351562 46.046875 0 L 46.046875 -2.46875 C 45.816406 -2.425781 45.585938 -2.394531 45.359375 -2.375 C 45.140625 -2.351562 44.921875 -2.34375 44.703125 -2.34375 C 43.765625 -2.34375 42.9375 -2.472656 42.21875 -2.734375 C 41.507812 -3.003906 40.84375 -3.394531 40.21875 -3.90625 C 39.59375 -4.425781 38.988281 -5.050781 38.40625 -5.78125 C 37.832031 -6.519531 37.234375 -7.359375 36.609375 -8.296875 C 34.734375 -11.015625 33.28125 -13.1875 32.25 -14.8125 C 31.226562 -16.445312 30.414062 -17.707031 29.8125 -18.59375 C 29.207031 -19.488281 28.710938 -20.132812 28.328125 -20.53125 C 27.953125 -20.9375 27.5 -21.273438 26.96875 -21.546875 L 26.296875 -21.890625 L 26.296875 -22.15625 C 28.441406 -22.289062 30.28125 -22.757812 31.8125 -23.5625 C 33.351562 -24.363281 34.613281 -25.363281 35.59375 -26.5625 C 36.582031 -27.769531 37.296875 -29.078125 37.734375 -30.484375 C 38.179688 -31.890625 38.40625 -33.257812 38.40625 -34.59375 C 38.40625 -35.800781 38.171875 -37.117188 37.703125 -38.546875 C 37.242188 -39.972656 36.441406 -41.300781 35.296875 -42.53125 C 34.160156 -43.757812 32.609375 -44.785156 30.640625 -45.609375 C 28.679688 -46.429688 26.207031 -46.84375 23.21875 -46.84375 Z M 14.125 -43.90625 L 20.875 -43.90625 C 22.570312 -43.90625 24.097656 -43.65625 25.453125 -43.15625 C 26.816406 -42.664062 27.988281 -41.984375 28.96875 -41.109375 C 29.957031 -40.242188 30.707031 -39.207031 31.21875 -38 C 31.726562 -36.800781 31.984375 -35.488281 31.984375 -34.0625 C 31.984375 -32.851562 31.75 -31.632812 31.28125 -30.40625 C 30.8125 -29.1875 30.109375 -28.070312 29.171875 -27.0625 C 28.234375 -26.0625 27.082031 -25.25 25.71875 -24.625 C 24.363281 -24 22.796875 -23.6875 21.015625 -23.6875 L 14.125 -23.6875 Z M 14.125 -43.90625 "/></g></g></g><g fill="currentColor" fill-opacity="1"><g transform="translate(823.838686, 422.241609)"><g><path d="M 8.03125 -46.84375 L 8.03125 0 L 38.28125 0 L 38.28125 -3.6875 L 14.125 -3.6875 L 14.125 -23.28125 L 34.859375 -23.28125 L 34.859375 -26.375 L 14.125 -26.375 L 14.125 -43.171875 L 38.28125 -43.171875 L 38.28125 -46.84375 Z M 8.03125 -46.84375 "/></g></g></g><g clip-path="url(#11576bdf47)"><g clip-path="url(#4aea36ff11)"><g clip-path="url(#0f09a3b431)"><path fill="currentColor" d="M 731.539062 412.058594 L 699.148438 412.292969 L 698.886719 375.980469 L 731.277344 375.75 Z M 731.539062 412.058594 " fill-opacity="1" fill-rule="nonzero"/></g></g></g><g clip-path="url(#84e6c9b559)"><g clip-path="url(#5523d27120)"><path fill="currentColor" d="M 738.585938 386.847656 L 770.976562 386.847656 L 770.976562 423.160156 L 738.585938 423.160156 Z M 738.585938 386.847656 " fill-opacity="1" fill-rule="nonzero"/></g></g><g fill="currentColor" fill-opacity="1"><g transform="translate(868.223196, 380.585768)"><g><path d="M 5.34375 -7.375 L 6.015625 -7.375 C 6.347656 -7.375 6.625 -7.265625 6.84375 -7.046875 C 7.0625 -6.828125 7.171875 -6.578125 7.171875 -6.296875 C 7.171875 -6.085938 7.132812 -5.910156 7.0625 -5.765625 C 6.988281 -5.628906 6.890625 -5.519531 6.765625 -5.4375 C 6.648438 -5.351562 6.523438 -5.289062 6.390625 -5.25 C 6.265625 -5.21875 6.144531 -5.203125 6.03125 -5.203125 L 5.34375 -5.203125 Z M 4.40625 -2.21875 L 5.34375 -2.21875 L 5.34375 -4.640625 L 5.984375 -4.640625 C 6.023438 -4.640625 6.097656 -4.566406 6.203125 -4.421875 C 6.304688 -4.285156 6.421875 -4.125 6.546875 -3.9375 C 6.671875 -3.75 6.785156 -3.566406 6.890625 -3.390625 C 7.003906 -3.210938 7.082031 -3.085938 7.125 -3.015625 C 7.21875 -2.898438 7.300781 -2.785156 7.375 -2.671875 C 7.445312 -2.566406 7.53125 -2.472656 7.625 -2.390625 C 7.726562 -2.304688 7.835938 -2.242188 7.953125 -2.203125 C 8.078125 -2.160156 8.234375 -2.140625 8.421875 -2.140625 C 8.578125 -2.140625 8.695312 -2.148438 8.78125 -2.171875 C 8.875 -2.191406 8.960938 -2.226562 9.046875 -2.28125 L 9.046875 -2.75 C 8.960938 -2.726562 8.875 -2.71875 8.78125 -2.71875 C 8.550781 -2.71875 8.382812 -2.773438 8.28125 -2.890625 C 8.175781 -3.003906 8.097656 -3.101562 8.046875 -3.1875 L 6.890625 -4.796875 C 7.117188 -4.859375 7.3125 -4.945312 7.46875 -5.0625 C 7.632812 -5.1875 7.769531 -5.320312 7.875 -5.46875 C 7.976562 -5.613281 8.050781 -5.757812 8.09375 -5.90625 C 8.132812 -6.0625 8.15625 -6.207031 8.15625 -6.34375 C 8.15625 -6.4375 8.132812 -6.566406 8.09375 -6.734375 C 8.0625 -6.910156 7.976562 -7.082031 7.84375 -7.25 C 7.707031 -7.425781 7.515625 -7.578125 7.265625 -7.703125 C 7.015625 -7.828125 6.6875 -7.890625 6.28125 -7.890625 L 4.40625 -7.890625 Z M 1.984375 -5.140625 C 1.984375 -5.742188 2.097656 -6.304688 2.328125 -6.828125 C 2.566406 -7.359375 2.882812 -7.820312 3.28125 -8.21875 C 3.675781 -8.613281 4.132812 -8.925781 4.65625 -9.15625 C 5.1875 -9.382812 5.75 -9.5 6.34375 -9.5 C 6.945312 -9.5 7.507812 -9.382812 8.03125 -9.15625 C 8.5625 -8.925781 9.023438 -8.613281 9.421875 -8.21875 C 9.816406 -7.820312 10.128906 -7.359375 10.359375 -6.828125 C 10.597656 -6.304688 10.71875 -5.742188 10.71875 -5.140625 C 10.71875 -4.546875 10.597656 -3.984375 10.359375 -3.453125 C 10.128906 -2.929688 9.816406 -2.46875 9.421875 -2.0625 C 9.023438 -1.664062 8.5625 -1.351562 8.03125 -1.125 C 7.507812 -0.894531 6.945312 -0.78125 6.34375 -0.78125 C 5.75 -0.78125 5.1875 -0.894531 4.65625 -1.125 C 4.132812 -1.351562 3.675781 -1.664062 3.28125 -2.0625 C 2.882812 -2.46875 2.566406 -2.929688 2.328125 -3.453125 C 2.097656 -3.984375 1.984375 -4.546875 1.984375 -5.140625 Z M 1.03125 -5.140625 C 1.03125 -4.410156 1.171875 -3.722656 1.453125 -3.078125 C 1.734375 -2.429688 2.113281 -1.863281 2.59375 -1.375 C 3.070312 -0.894531 3.632812 -0.515625 4.28125 -0.234375 C 4.925781 0.0351562 5.613281 0.171875 6.34375 0.171875 C 7.082031 0.171875 7.773438 0.0351562 8.421875 -0.234375 C 9.066406 -0.515625 9.628906 -0.894531 10.109375 -1.375 C 10.585938 -1.863281 10.96875 -2.429688 11.25 -3.078125 C 11.53125 -3.722656 11.671875 -4.410156 11.671875 -5.140625 C 11.671875 -5.878906 11.53125 -6.566406 11.25 -7.203125 C 10.96875 -7.847656 10.585938 -8.410156 10.109375 -8.890625 C 9.628906 -9.378906 9.066406 -9.765625 8.421875 -10.046875 C 7.773438 -10.328125 7.082031 -10.46875 6.34375 -10.46875 C 5.613281 -10.46875 4.925781 -10.328125 4.28125 -10.046875 C 3.632812 -9.765625 3.070312 -9.378906 2.59375 -8.890625 C 2.113281 -8.410156 1.734375 -7.847656 1.453125 -7.203125 C 1.171875 -6.566406 1.03125 -5.878906 1.03125 -5.140625 Z M 1.03125 -5.140625 "/></g></g></g><g fill="currentColor" fill-opacity="1"><g transform="translate(573.726649, 445.180654)"><g><path d="M 8.375 -5.453125 C 9.070312 -5.296875 9.609375 -4.992188 9.984375 -4.546875 C 10.359375 -4.097656 10.546875 -3.523438 10.546875 -2.828125 C 10.546875 -1.921875 10.210938 -1.222656 9.546875 -0.734375 C 8.878906 -0.242188 7.890625 0 6.578125 0 L 1.71875 0 L 1.71875 -10.5625 L 6.28125 -10.5625 C 7.457031 -10.5625 8.367188 -10.320312 9.015625 -9.84375 C 9.660156 -9.375 9.984375 -8.707031 9.984375 -7.84375 C 9.984375 -7.257812 9.835938 -6.765625 9.546875 -6.359375 C 9.265625 -5.953125 8.875 -5.648438 8.375 -5.453125 Z M 2.84375 -9.640625 L 2.84375 -5.8125 L 6.203125 -5.8125 C 7.054688 -5.8125 7.710938 -5.972656 8.171875 -6.296875 C 8.640625 -6.628906 8.875 -7.109375 8.875 -7.734375 C 8.875 -8.347656 8.640625 -8.816406 8.171875 -9.140625 C 7.710938 -9.472656 7.054688 -9.640625 6.203125 -9.640625 Z M 6.5625 -0.921875 C 7.507812 -0.921875 8.222656 -1.082031 8.703125 -1.40625 C 9.191406 -1.726562 9.4375 -2.226562 9.4375 -2.90625 C 9.4375 -4.226562 8.476562 -4.890625 6.5625 -4.890625 L 2.84375 -4.890625 L 2.84375 -0.921875 Z M 6.5625 -0.921875 "/></g></g></g><g fill="currentColor" fill-opacity="1"><g transform="translate(596.357546, 445.180654)"><g><path d="M 5.984375 0.09375 C 4.609375 0.09375 3.535156 -0.296875 2.765625 -1.078125 C 2.003906 -1.867188 1.625 -3.015625 1.625 -4.515625 L 1.625 -10.5625 L 2.75 -10.5625 L 2.75 -4.5625 C 2.75 -3.332031 3.023438 -2.414062 3.578125 -1.8125 C 4.128906 -1.207031 4.929688 -0.90625 5.984375 -0.90625 C 7.035156 -0.90625 7.835938 -1.207031 8.390625 -1.8125 C 8.941406 -2.414062 9.21875 -3.332031 9.21875 -4.5625 L 9.21875 -10.5625 L 10.3125 -10.5625 L 10.3125 -4.515625 C 10.3125 -3.015625 9.929688 -1.867188 9.171875 -1.078125 C 8.410156 -0.296875 7.347656 0.09375 5.984375 0.09375 Z M 5.984375 0.09375 "/></g></g></g><g fill="currentColor" fill-opacity="1"><g transform="translate(619.562008, 445.180654)"><g><path d="M 4.640625 0.09375 C 3.847656 0.09375 3.09375 -0.03125 2.375 -0.28125 C 1.65625 -0.539062 1.097656 -0.875 0.703125 -1.28125 L 1.140625 -2.140625 C 1.523438 -1.753906 2.035156 -1.441406 2.671875 -1.203125 C 3.304688 -0.972656 3.960938 -0.859375 4.640625 -0.859375 C 5.578125 -0.859375 6.28125 -1.03125 6.75 -1.375 C 7.226562 -1.726562 7.46875 -2.179688 7.46875 -2.734375 C 7.46875 -3.148438 7.335938 -3.484375 7.078125 -3.734375 C 6.828125 -3.992188 6.515625 -4.191406 6.140625 -4.328125 C 5.765625 -4.460938 5.25 -4.609375 4.59375 -4.765625 C 3.789062 -4.972656 3.15625 -5.164062 2.6875 -5.34375 C 2.21875 -5.53125 1.8125 -5.816406 1.46875 -6.203125 C 1.132812 -6.585938 0.96875 -7.109375 0.96875 -7.765625 C 0.96875 -8.296875 1.109375 -8.78125 1.390625 -9.21875 C 1.671875 -9.65625 2.101562 -10.003906 2.6875 -10.265625 C 3.269531 -10.523438 3.992188 -10.65625 4.859375 -10.65625 C 5.460938 -10.65625 6.050781 -10.570312 6.625 -10.40625 C 7.207031 -10.238281 7.710938 -10.007812 8.140625 -9.71875 L 7.765625 -8.828125 C 7.316406 -9.117188 6.835938 -9.335938 6.328125 -9.484375 C 5.828125 -9.628906 5.335938 -9.703125 4.859375 -9.703125 C 3.929688 -9.703125 3.234375 -9.523438 2.765625 -9.171875 C 2.296875 -8.816406 2.0625 -8.351562 2.0625 -7.78125 C 2.0625 -7.363281 2.191406 -7.023438 2.453125 -6.765625 C 2.710938 -6.515625 3.035156 -6.320312 3.421875 -6.1875 C 3.804688 -6.050781 4.328125 -5.898438 4.984375 -5.734375 C 5.753906 -5.546875 6.378906 -5.359375 6.859375 -5.171875 C 7.335938 -4.984375 7.742188 -4.703125 8.078125 -4.328125 C 8.410156 -3.953125 8.578125 -3.441406 8.578125 -2.796875 C 8.578125 -2.265625 8.429688 -1.773438 8.140625 -1.328125 C 7.859375 -0.890625 7.421875 -0.539062 6.828125 -0.28125 C 6.234375 -0.03125 5.503906 0.09375 4.640625 0.09375 Z M 4.640625 0.09375 "/></g></g></g><g fill="currentColor" fill-opacity="1"><g transform="translate(640.094883, 445.180654)"><g><path d="M 1.71875 -10.5625 L 2.84375 -10.5625 L 2.84375 0 L 1.71875 0 Z M 1.71875 -10.5625 "/></g></g></g><g fill="currentColor" fill-opacity="1"><g transform="translate(655.903441, 445.180654)"><g><path d="M 10.546875 -10.5625 L 10.546875 0 L 9.625 0 L 2.84375 -8.578125 L 2.84375 0 L 1.71875 0 L 1.71875 -10.5625 L 2.640625 -10.5625 L 9.453125 -2 L 9.453125 -10.5625 Z M 10.546875 -10.5625 "/></g></g></g><g fill="currentColor" fill-opacity="1"><g transform="translate(679.424871, 445.180654)"><g><path d="M 9.1875 -0.96875 L 9.1875 0 L 1.71875 0 L 1.71875 -10.5625 L 8.96875 -10.5625 L 8.96875 -9.59375 L 2.84375 -9.59375 L 2.84375 -5.84375 L 8.296875 -5.84375 L 8.296875 -4.890625 L 2.84375 -4.890625 L 2.84375 -0.96875 Z M 9.1875 -0.96875 "/></g></g></g><g fill="currentColor" fill-opacity="1"><g transform="translate(700.772804, 445.180654)"><g><path d="M 4.640625 0.09375 C 3.847656 0.09375 3.09375 -0.03125 2.375 -0.28125 C 1.65625 -0.539062 1.097656 -0.875 0.703125 -1.28125 L 1.140625 -2.140625 C 1.523438 -1.753906 2.035156 -1.441406 2.671875 -1.203125 C 3.304688 -0.972656 3.960938 -0.859375 4.640625 -0.859375 C 5.578125 -0.859375 6.28125 -1.03125 6.75 -1.375 C 7.226562 -1.726562 7.46875 -2.179688 7.46875 -2.734375 C 7.46875 -3.148438 7.335938 -3.484375 7.078125 -3.734375 C 6.828125 -3.992188 6.515625 -4.191406 6.140625 -4.328125 C 5.765625 -4.460938 5.25 -4.609375 4.59375 -4.765625 C 3.789062 -4.972656 3.15625 -5.164062 2.6875 -5.34375 C 2.21875 -5.53125 1.8125 -5.816406 1.46875 -6.203125 C 1.132812 -6.585938 0.96875 -7.109375 0.96875 -7.765625 C 0.96875 -8.296875 1.109375 -8.78125 1.390625 -9.21875 C 1.671875 -9.65625 2.101562 -10.003906 2.6875 -10.265625 C 3.269531 -10.523438 3.992188 -10.65625 4.859375 -10.65625 C 5.460938 -10.65625 6.050781 -10.570312 6.625 -10.40625 C 7.207031 -10.238281 7.710938 -10.007812 8.140625 -9.71875 L 7.765625 -8.828125 C 7.316406 -9.117188 6.835938 -9.335938 6.328125 -9.484375 C 5.828125 -9.628906 5.335938 -9.703125 4.859375 -9.703125 C 3.929688 -9.703125 3.234375 -9.523438 2.765625 -9.171875 C 2.296875 -8.816406 2.0625 -8.351562 2.0625 -7.78125 C 2.0625 -7.363281 2.191406 -7.023438 2.453125 -6.765625 C 2.710938 -6.515625 3.035156 -6.320312 3.421875 -6.1875 C 3.804688 -6.050781 4.328125 -5.898438 4.984375 -5.734375 C 5.753906 -5.546875 6.378906 -5.359375 6.859375 -5.171875 C 7.335938 -4.984375 7.742188 -4.703125 8.078125 -4.328125 C 8.410156 -3.953125 8.578125 -3.441406 8.578125 -2.796875 C 8.578125 -2.265625 8.429688 -1.773438 8.140625 -1.328125 C 7.859375 -0.890625 7.421875 -0.539062 6.828125 -0.28125 C 6.234375 -0.03125 5.503906 0.09375 4.640625 0.09375 Z M 4.640625 0.09375 "/></g></g></g><g fill="currentColor" fill-opacity="1"><g transform="translate(721.305679, 445.180654)"><g><path d="M 4.640625 0.09375 C 3.847656 0.09375 3.09375 -0.03125 2.375 -0.28125 C 1.65625 -0.539062 1.097656 -0.875 0.703125 -1.28125 L 1.140625 -2.140625 C 1.523438 -1.753906 2.035156 -1.441406 2.671875 -1.203125 C 3.304688 -0.972656 3.960938 -0.859375 4.640625 -0.859375 C 5.578125 -0.859375 6.28125 -1.03125 6.75 -1.375 C 7.226562 -1.726562 7.46875 -2.179688 7.46875 -2.734375 C 7.46875 -3.148438 7.335938 -3.484375 7.078125 -3.734375 C 6.828125 -3.992188 6.515625 -4.191406 6.140625 -4.328125 C 5.765625 -4.460938 5.25 -4.609375 4.59375 -4.765625 C 3.789062 -4.972656 3.15625 -5.164062 2.6875 -5.34375 C 2.21875 -5.53125 1.8125 -5.816406 1.46875 -6.203125 C 1.132812 -6.585938 0.96875 -7.109375 0.96875 -7.765625 C 0.96875 -8.296875 1.109375 -8.78125 1.390625 -9.21875 C 1.671875 -9.65625 2.101562 -10.003906 2.6875 -10.265625 C 3.269531 -10.523438 3.992188 -10.65625 4.859375 -10.65625 C 5.460938 -10.65625 6.050781 -10.570312 6.625 -10.40625 C 7.207031 -10.238281 7.710938 -10.007812 8.140625 -9.71875 L 7.765625 -8.828125 C 7.316406 -9.117188 6.835938 -9.335938 6.328125 -9.484375 C 5.828125 -9.628906 5.335938 -9.703125 4.859375 -9.703125 C 3.929688 -9.703125 3.234375 -9.523438 2.765625 -9.171875 C 2.296875 -8.816406 2.0625 -8.351562 2.0625 -7.78125 C 2.0625 -7.363281 2.191406 -7.023438 2.453125 -6.765625 C 2.710938 -6.515625 3.035156 -6.320312 3.421875 -6.1875 C 3.804688 -6.050781 4.328125 -5.898438 4.984375 -5.734375 C 5.753906 -5.546875 6.378906 -5.359375 6.859375 -5.171875 C 7.335938 -4.984375 7.742188 -4.703125 8.078125 -4.328125 C 8.410156 -3.953125 8.578125 -3.441406 8.578125 -2.796875 C 8.578125 -2.265625 8.429688 -1.773438 8.140625 -1.328125 C 7.859375 -0.890625 7.421875 -0.539062 6.828125 -0.28125 C 6.234375 -0.03125 5.503906 0.09375 4.640625 0.09375 Z M 4.640625 0.09375 "/></g></g></g><g fill="currentColor" fill-opacity="1"><g transform="translate(741.838553, 445.180654)"><g/></g></g><g fill="currentColor" fill-opacity="1"><g transform="translate(757.043355, 445.180654)"><g><path d="M 9.15625 -5.28125 L 10.234375 -5.28125 L 10.234375 -1.25 C 9.742188 -0.820312 9.160156 -0.488281 8.484375 -0.25 C 7.804688 -0.0195312 7.097656 0.09375 6.359375 0.09375 C 5.296875 0.09375 4.34375 -0.132812 3.5 -0.59375 C 2.65625 -1.0625 1.988281 -1.707031 1.5 -2.53125 C 1.019531 -3.351562 0.78125 -4.269531 0.78125 -5.28125 C 0.78125 -6.300781 1.019531 -7.21875 1.5 -8.03125 C 1.988281 -8.851562 2.65625 -9.492188 3.5 -9.953125 C 4.34375 -10.421875 5.300781 -10.65625 6.375 -10.65625 C 7.175781 -10.65625 7.910156 -10.523438 8.578125 -10.265625 C 9.253906 -10.015625 9.828125 -9.632812 10.296875 -9.125 L 9.59375 -8.421875 C 8.757812 -9.242188 7.703125 -9.65625 6.421875 -9.65625 C 5.554688 -9.65625 4.78125 -9.46875 4.09375 -9.09375 C 3.40625 -8.71875 2.863281 -8.191406 2.46875 -7.515625 C 2.082031 -6.847656 1.890625 -6.101562 1.890625 -5.28125 C 1.890625 -4.457031 2.082031 -3.710938 2.46875 -3.046875 C 2.863281 -2.378906 3.398438 -1.851562 4.078125 -1.46875 C 4.765625 -1.09375 5.539062 -0.90625 6.40625 -0.90625 C 7.488281 -0.90625 8.40625 -1.175781 9.15625 -1.71875 Z M 9.15625 -5.28125 "/></g></g></g><g fill="currentColor" fill-opacity="1"><g transform="translate(779.961029, 445.180654)"><g><path d="M 8.9375 0 L 6.515625 -3.390625 C 6.242188 -3.359375 5.960938 -3.34375 5.671875 -3.34375 L 2.84375 -3.34375 L 2.84375 0 L 1.71875 0 L 1.71875 -10.5625 L 5.671875 -10.5625 C 7.023438 -10.5625 8.082031 -10.238281 8.84375 -9.59375 C 9.601562 -8.957031 9.984375 -8.070312 9.984375 -6.9375 C 9.984375 -6.113281 9.773438 -5.414062 9.359375 -4.84375 C 8.941406 -4.28125 8.347656 -3.875 7.578125 -3.625 L 10.15625 0 Z M 5.640625 -4.296875 C 6.691406 -4.296875 7.492188 -4.523438 8.046875 -4.984375 C 8.597656 -5.453125 8.875 -6.101562 8.875 -6.9375 C 8.875 -7.789062 8.597656 -8.445312 8.046875 -8.90625 C 7.492188 -9.363281 6.691406 -9.59375 5.640625 -9.59375 L 2.84375 -9.59375 L 2.84375 -4.296875 Z M 5.640625 -4.296875 "/></g></g></g><g fill="currentColor" fill-opacity="1"><g transform="translate(802.124022, 445.180654)"><g><path d="M 6.34375 0.09375 C 5.289062 0.09375 4.335938 -0.140625 3.484375 -0.609375 C 2.640625 -1.078125 1.976562 -1.71875 1.5 -2.53125 C 1.019531 -3.351562 0.78125 -4.269531 0.78125 -5.28125 C 0.78125 -6.300781 1.019531 -7.21875 1.5 -8.03125 C 1.976562 -8.84375 2.640625 -9.484375 3.484375 -9.953125 C 4.335938 -10.421875 5.289062 -10.65625 6.34375 -10.65625 C 7.382812 -10.65625 8.328125 -10.421875 9.171875 -9.953125 C 10.015625 -9.492188 10.675781 -8.851562 11.15625 -8.03125 C 11.632812 -7.21875 11.875 -6.300781 11.875 -5.28125 C 11.875 -4.269531 11.632812 -3.351562 11.15625 -2.53125 C 10.675781 -1.707031 10.015625 -1.0625 9.171875 -0.59375 C 8.328125 -0.132812 7.382812 0.09375 6.34375 0.09375 Z M 6.34375 -0.90625 C 7.175781 -0.90625 7.925781 -1.09375 8.59375 -1.46875 C 9.269531 -1.84375 9.800781 -2.363281 10.1875 -3.03125 C 10.570312 -3.707031 10.765625 -4.457031 10.765625 -5.28125 C 10.765625 -6.101562 10.570312 -6.847656 10.1875 -7.515625 C 9.800781 -8.191406 9.269531 -8.71875 8.59375 -9.09375 C 7.925781 -9.46875 7.175781 -9.65625 6.34375 -9.65625 C 5.507812 -9.65625 4.75 -9.46875 4.0625 -9.09375 C 3.382812 -8.71875 2.851562 -8.191406 2.46875 -7.515625 C 2.082031 -6.847656 1.890625 -6.101562 1.890625 -5.28125 C 1.890625 -4.457031 2.082031 -3.707031 2.46875 -3.03125 C 2.851562 -2.363281 3.382812 -1.84375 4.0625 -1.46875 C 4.75 -1.09375 5.507812 -0.90625 6.34375 -0.90625 Z M 6.34375 -0.90625 "/></g></g></g><g fill="currentColor" fill-opacity="1"><g transform="translate(826.03787, 445.180654)"><g><path d="M 5.984375 0.09375 C 4.609375 0.09375 3.535156 -0.296875 2.765625 -1.078125 C 2.003906 -1.867188 1.625 -3.015625 1.625 -4.515625 L 1.625 -10.5625 L 2.75 -10.5625 L 2.75 -4.5625 C 2.75 -3.332031 3.023438 -2.414062 3.578125 -1.8125 C 4.128906 -1.207031 4.929688 -0.90625 5.984375 -0.90625 C 7.035156 -0.90625 7.835938 -1.207031 8.390625 -1.8125 C 8.941406 -2.414062 9.21875 -3.332031 9.21875 -4.5625 L 9.21875 -10.5625 L 10.3125 -10.5625 L 10.3125 -4.515625 C 10.3125 -3.015625 9.929688 -1.867188 9.171875 -1.078125 C 8.410156 -0.296875 7.347656 0.09375 5.984375 0.09375 Z M 5.984375 0.09375 "/></g></g></g><g fill="currentColor" fill-opacity="1"><g transform="translate(849.242321, 445.180654)"><g><path d="M 5.671875 -10.5625 C 7.023438 -10.5625 8.082031 -10.238281 8.84375 -9.59375 C 9.601562 -8.957031 9.984375 -8.070312 9.984375 -6.9375 C 9.984375 -5.8125 9.601562 -4.925781 8.84375 -4.28125 C 8.082031 -3.644531 7.023438 -3.328125 5.671875 -3.328125 L 2.84375 -3.328125 L 2.84375 0 L 1.71875 0 L 1.71875 -10.5625 Z M 5.640625 -4.3125 C 6.691406 -4.3125 7.492188 -4.539062 8.046875 -5 C 8.597656 -5.457031 8.875 -6.101562 8.875 -6.9375 C 8.875 -7.789062 8.597656 -8.445312 8.046875 -8.90625 C 7.492188 -9.363281 6.691406 -9.59375 5.640625 -9.59375 L 2.84375 -9.59375 L 2.84375 -4.3125 Z M 5.640625 -4.3125 "/></g></g></g><g fill="currentColor" fill-opacity="1"><g transform="translate(567.360233, 423.057)"><g><path d="M 8.03125 -46.84375 L 8.03125 0 L 38.28125 0 L 38.28125 -3.6875 L 14.125 -3.6875 L 14.125 -23.28125 L 34.859375 -23.28125 L 34.859375 -26.375 L 14.125 -26.375 L 14.125 -43.171875 L 38.28125 -43.171875 L 38.28125 -46.84375 Z M 8.03125 -46.84375 "/></g></g></g><g fill="currentColor" fill-opacity="1"><g transform="translate(608.911954, 423.057)"><g><path d="M 8.03125 0 L 8.03125 -46.84375 L 14.125 -46.84375 L 14.125 -3.6875 L 38.28125 -3.6875 L 38.28125 0 Z M 8.03125 0 "/></g></g></g><g fill="currentColor" fill-opacity="1"><g transform="translate(650.463674, 423.057)"><g><path d="M 8.03125 -46.84375 L 8.03125 0 L 38.28125 0 L 38.28125 -3.6875 L 14.125 -3.6875 L 14.125 -23.28125 L 34.859375 -23.28125 L 34.859375 -26.375 L 14.125 -26.375 L 14.125 -43.171875 L 38.28125 -43.171875 L 38.28125 -46.84375 Z M 8.03125 -46.84375 "/></g></g></g></svg></a>
     <div class="side-client">Plano Macro · Dr. Hilton Monteiro</div>
     <nav class="tabs-nav" aria-label="Partes do plano">
       <a href="#inicio" data-tab="inicio">Início</a>
@@ -442,21 +490,19 @@
       <div><div class="k">Etapa</div><div class="v">Apresentação do plano</div></div>
     </div>
 
-    <div class="facts">
-      <div class="fact"><div class="k">Nicho</div><div class="v">Andrologia · saúde sexual masculina</div></div>
-      <div class="fact"><div class="k">Site</div><div class="v"><a href="https://drhiltonmonteiro.com.br/" target="_blank" rel="noopener">drhiltonmonteiro.com.br</a></div></div>
-      <div class="fact"><div class="k">Instagram</div><div class="v"><a href="https://www.instagram.com/dr.hiltonmonteiro/" target="_blank" rel="noopener">@dr.hiltonmonteiro</a></div></div>
-      <div class="fact"><div class="k">Seguidores</div><div class="v">cerca de 2 mil</div></div>
-      <div class="fact"><div class="k">Ticket</div><div class="v">cerca de R$ 16 mil</div></div>
-      <div class="fact"><div class="k">Google Meu Negócio</div><div class="v"><a href="https://www.google.com/maps/search/?api=1&amp;query=Dr.+Hilton+Monteiro+da+Rocha+Neto+Bras%C3%ADlia" target="_blank" rel="noopener">Nota 5,0</a> · Doctoralia 5,0 (214)</div></div>
-      <div class="fact"><div class="k">Região</div><div class="v">Brasília-DF (Asa Sul)</div></div>
-      <div class="fact is-new"><div class="k">Volume atual</div><div class="v">~1 Peyronie e 2 Urofill/mês</div></div>
+    <h3 class="sub-h">O plano em 5 decisões</h3>
+    <div class="decisions">
+      <div class="decision"><b>Atendimento antes de verba</b><span>Mais verba sem um atendimento rápido e consultivo só aumenta o desperdício. Primeiro: resposta em até 5 minutos e o roteiro da aba Comercial.</span></div>
+      <div class="decision"><b>Cada procedimento no canal certo</b><span>O Google captura quem já pesquisa Peyronie; a Meta desperta, com vídeo, o desejo do UroFill®.</span></div>
+      <div class="decision"><b>O seu vídeo é o motor</b><span>Seis roteiros por mês, gravados numa manhã. Em setembro, o vídeo de UroFill trouxe 51 leads a R$ 11,86; as imagens foram pausadas.</span></div>
+      <div class="decision"><b>Medir consulta, não lead</b><span>Cada lead com a etapa registrada no CRM. A verba vai pro que gera consulta e procedimento, não pro lead mais barato.</span></div>
+      <div class="decision"><b>+2 procedimentos por mês até o 4º mês</b><span>Com cerca de 137 leads por mês, isso exige que só 1,5% deles vire procedimento. O desafio está na conversão, não no volume.</span></div>
     </div>
 
     <h3 class="sub-h">O que tem neste plano</h3>
     <div class="toc">
       <a href="#tab-briefing"><span>01</span><b>Briefing</b><em>Quem é o Dr. Hilton, o mercado, a concorrência e o que ouvimos nas calls.</em></a>
-      <a href="#tab-persona"><span>02</span><b>Persona</b><em>Os dois pacientes: o homem com Peyronie e o homem que busca o Urofill.</em></a>
+      <a href="#tab-persona"><span>02</span><b>Persona</b><em>Os dois pacientes: o homem com Peyronie e o homem que busca o UroFill.</em></a>
       <a href="#tab-trafego"><span>03</span><b>Estratégia de tráfego</b><em>Posicionamento, Google e Meta, campanhas, formulário e projeção.</em></a>
       <a href="#tab-perfil"><span>04</span><b>Estruturação do perfil</b><em>Bio, destaques, fixados e linha editorial.</em></a>
       <a href="#tab-roteiros"><span>05</span><b>Roteiros</b><em>Os anúncios do nicho que estão há mais tempo no ar e os 6 roteiros de vídeo.</em></a>
@@ -466,17 +512,27 @@
     <a class="btn" href="#tab-briefing">Começar pelo briefing →</a>
   </div>
   <div class="tab" id="tab-briefing">
-    <header class="tab-head"><span class="tab-num">01</span><h1>Briefing</h1><p>Quem é o Dr. Hilton, o mercado em que atua, a concorrência e o que ouvimos nas calls.</p><nav class="tab-toc"><a href="#contexto">Contexto</a><a href="#mercado">Mercado</a><a href="#briefing">Briefing das calls</a><a href="#swot">SWOT</a><a href="#lacunas">Lacunas</a></nav></header>
+    <header class="tab-head"><span class="tab-num">Parte 01 de 07</span><h1>Briefing</h1><p>Quem é o Dr. Hilton, o mercado em que atua, a concorrência e o que ouvimos nas calls.</p><nav class="tab-toc"><a href="#contexto">Contexto</a><a href="#mercado">Mercado</a><a href="#briefing">Briefing das calls</a><a href="#swot">SWOT</a><a href="#lacunas">O que falta confirmar</a></nav></header>
 
   <section id="contexto">
     <div class="sec-head"><span class="sec-num">1.1</span><h2>Contexto do cliente</h2></div>
-    <p class="sec-desc">Urologista e andrologista em Brasília (Asa Sul), com consultório 100% particular desde setembro de 2026 e foco em dois procedimentos: a cirurgia da Doença de Peyronie e o Urofill.</p>
+    <p class="sec-desc">Urologista e andrologista em Brasília (Asa Sul), com consultório 100% particular desde setembro de 2026 e foco em dois procedimentos: a cirurgia da Doença de Peyronie e o UroFill.</p>
+    <div class="facts">
+      <div class="fact"><div class="k">Nicho</div><div class="v">Andrologia · saúde sexual masculina</div></div>
+      <div class="fact"><div class="k">Site</div><div class="v"><a href="https://drhiltonmonteiro.com.br/" target="_blank" rel="noopener">drhiltonmonteiro.com.br</a></div></div>
+      <div class="fact"><div class="k">Instagram</div><div class="v"><a href="https://www.instagram.com/dr.hiltonmonteiro/" target="_blank" rel="noopener">@dr.hiltonmonteiro</a></div></div>
+      <div class="fact"><div class="k">Seguidores</div><div class="v">cerca de 2 mil</div></div>
+      <div class="fact"><div class="k">Ticket</div><div class="v">R$ 7,5 mil a R$ 16 mil</div></div>
+      <div class="fact"><div class="k">Google Meu Negócio</div><div class="v"><a href="https://www.google.com/maps/search/?api=1&amp;query=Dr.+Hilton+Monteiro+da+Rocha+Neto+Bras%C3%ADlia" target="_blank" rel="noopener">Nota 5,0</a> · Doctoralia 5,0 (214)</div></div>
+      <div class="fact"><div class="k">Região</div><div class="v">Brasília-DF (Asa Sul)</div></div>
+      <div class="fact is-new"><div class="k">Volume atual</div><div class="v">~1 Peyronie e 2 UroFill/mês</div></div>
+    </div>
     <div class="grid2">
       <div class="card">
         <h3>O que vende</h3>
         <p><strong>Cirurgia para Doença de Peyronie</strong> (carro-chefe): correção da curvatura com enxerto de pericárdio bovino quando indicado, preservando a ereção natural. Diagnóstico com Doppler peniano.</p>
-        <p><strong>Urofill®</strong>: aumento da espessura peniana com ácido hialurônico, em consultório, com anestesia local. Pago em pacote; também há opções com outras marcas de ácido hialurônico, de valor menor.</p>
-        <p>Atende ainda disfunção erétil, reposição hormonal, prótese peniana, vasectomia e faloplastia, que entram depois de validar Peyronie e Urofill.</p>
+        <p><strong>UroFill®</strong>: aumento da espessura peniana com ácido hialurônico, em consultório, com anestesia local. Pago em pacote; também há opções com outras marcas de ácido hialurônico, de valor menor.</p>
+        <p>Atende ainda disfunção erétil, reposição hormonal, prótese peniana, vasectomia e faloplastia, que entram depois de validar Peyronie e UroFill.</p>
       </div>
       <div class="card">
         <h3>Diferencial competitivo</h3>
@@ -502,12 +558,12 @@
 
   <section id="mercado">
     <div class="sec-head"><span class="sec-num">1.2</span><h2>Mercado</h2></div>
-    <p class="sec-desc">Há demanda dos dois lados, mas de jeitos diferentes. O Peyronie é um problema escondido que precisa de educação e confiança; o Urofill é desejo estético, com lead barato e muita comparação de preço.</p>
+    <p class="sec-desc">Há demanda dos dois lados, mas de jeitos diferentes. O Peyronie é um problema escondido que precisa de educação e confiança; o UroFill é desejo estético, com lead barato e muita comparação de preço.</p>
     <div class="stats">
       <div class="stat"><div class="num">6–10%</div><div class="lbl">dos homens de 40 a 70 anos têm Doença de Peyronie, segundo a SBU</div></div>
       <div class="stat"><div class="num">13%</div><div class="lbl">dos homens em atendimento urológico tinham placa de Peyronie, num estudo brasileiro</div></div>
       <div class="stat"><div class="num">R$ 5–23 mil</div><div class="lbl">preço publicado de preenchimento peniano em Brasília, conforme volume e marca</div></div>
-      <div class="stat"><div class="num">R$ 11 × 30+</div><div class="lbl">custo por lead de Urofill e de Peyronie na Meta (semana de 28/09/2026)</div></div>
+      <div class="stat"><div class="num">3 a 6×</div><div class="lbl">é quanto o lead de Peyronie custa a mais que o de UroFill na Meta (R$ 30 a 77 contra R$ 11 a 13, semana de 28/09)</div></div>
     </div>
     <h3 class="sub-h">Concorrência direta em Brasília</h3>
     <div class="tbl-wrap">
@@ -530,7 +586,7 @@
     </div>
     <div class="grid2" style="margin-top:22px;">
       <div class="card"><h3>Gap de mercado</h3><p>O homem com Peyronie ou insatisfação estética tem vergonha de procurar ajuda e é cercado de promessa da internet. Há espaço pro andrologista que resolve com técnica e sigilo: a reputação de explicar com paciência, que aparece nas 214 opiniões, é o que ele precisa pra dar o primeiro passo.</p></div>
-      <div class="card"><h3>Canais prioritários</h3><p><strong>Google Ads</strong> pro Peyronie, onde a busca é de alta intenção. <strong>Meta Ads</strong> pro Urofill, que escala barato com vídeo. <strong>Doctoralia e indicação</strong>, fortes no Urofill e no público LGBTQ+.</p></div>
+      <div class="card"><h3>Canais prioritários</h3><p><strong>Google Ads</strong> pro Peyronie, onde a busca é de alta intenção. <strong>Meta Ads</strong> pro UroFill, que escala barato com vídeo. <strong>Doctoralia e indicação</strong>, fortes no UroFill e no público LGBTQ+.</p></div>
     </div>
   </section>
 
@@ -540,8 +596,8 @@
     <div class="callout" style="margin-bottom:22px;">
       <span class="mark">!</span>
       <div>
-        <p><strong>O gargalo é o atendimento, não o lead:</strong> em setembro vieram 103 leads (67 de Urofill e 28 de Peyronie) a R$ 20,07, e até 01/10 nenhum fechamento tinha vindo de lead. Poucas tentativas de contato, baixo retorno às mensagens e uma abordagem padrão explicando o Urofill.</p>
-        <p>Antes de aumentar a verba: atendimento rápido e consultivo (aba Comercial), CRM medindo lead → consulta → procedimento e avaliar a secretária dedicada ao WhatsApp, discutida na call.</p>
+        <p><strong>O gargalo está entre o lead e a consulta:</strong> em setembro vieram 103 leads (67 de UroFill e 28 de Peyronie) a R$ 20,07, e até 01/10 nenhum deles tinha virado procedimento. A call de 01/10 mostrou o porquê: poucas tentativas de contato e uma mensagem inicial padrão, que explica o procedimento antes de entender o paciente.</p>
+        <p>Antes de aumentar a verba: atendimento rápido e consultivo (aba Comercial), CRM medindo lead → consulta → procedimento e a decisão sobre a secretária dedicada ao WhatsApp, discutida na call.</p>
       </div>
     </div>
     <div class="grid2">
@@ -552,12 +608,28 @@
         <li><strong>Lead qualificado</strong> = tem a dor que o Dr. Hilton resolve e aceita a consulta particular</li>
       </ul></div>
       <div class="card"><h3>Capacidade operacional</h3><ul>
-        <li>Em média 1 cirurgia de Peyronie e 2 Urofill por mês</li>
-        <li>Atendimento dos leads com a Tatiana, que divide o tempo com outras funções</li>
+        <li>Em média 1 cirurgia de Peyronie e 2 UroFill por mês</li>
+        <li>Duas colaboradoras no comercial; hoje quem atende os leads é a Tatiana</li>
+        <li>Secretária dedicada ao WhatsApp em avaliação (call de 17/08)</li>
         <li>CRM funcionando e recebendo os leads desde 01/10</li>
       </ul></div>
-      <div class="card"><h3>Financeiro</h3><p>Ticket de cerca de R$ 16 mil nos dois procedimentos (call de 17/08); na call de 01/10 foi citada uma média de R$ 7.500 pro Urofill. Peyronie: o plano cobre hospital e anestesia, e os honorários são particulares. 100% particular desde 01/09/2026.</p></div>
-      <div class="card"><h3>Histórico de marketing</h3><p>A agência anterior investia cerca de R$ 3 mil/mês e chegava a 15 leads por dia de qualidade variável, sem relatório e com CRM que não funcionou. Com a Elevare, em setembro: 103 leads a R$ 20,07 com R$ 2,1 mil na Meta; o melhor anúncio (vídeo de Urofill) trouxe 51 leads a R$ 11,86. Google Ads ativado em 01/10/2026.</p></div>
+      <div class="card"><h3>Financeiro</h3><p>Ticket de cerca de R$ 16 mil nos dois procedimentos (call de 17/08); na call de 01/10 foi citada uma média de R$ 7.500 pro UroFill. Peyronie: o plano cobre hospital e anestesia, e os honorários são particulares. 100% particular desde 01/09/2026.</p></div>
+      <div class="card"><h3>Histórico de marketing</h3><p>A agência anterior investia cerca de R$ 3 mil/mês e chegava a 15 leads por dia de qualidade variável, sem relatório e com CRM que não funcionou. Com a Elevare, em setembro: 103 leads a R$ 20,07 com R$ 2,1 mil na Meta; o melhor anúncio (vídeo de UroFill) trouxe 51 leads a R$ 11,86. Google Ads ativado em 01/10/2026.</p></div>
+    </div>
+    <h3 class="sub-h">Próximos passos combinados</h3>
+    <div class="ladder">
+      <div class="rung"><span class="n"></span><div><span class="who">Elevare</span><b>Auditar a conta e apresentar o Plano Macro <span class="status is-done">Este documento</span></b><span>Diagnóstico do histórico e plano estratégico.</span></div></div>
+      <div class="rung"><span class="n"></span><div><span class="who">Elevare</span><b>Implantar o CRM <span class="status is-done">Feito</span></b><span>Funcionando e recebendo os leads desde 01/10/2026.</span></div></div>
+      <div class="rung"><span class="n"></span><div><span class="who">Elevare</span><b>Ativar o Google Ads <span class="status is-done">Feito</span></b><span>No ar desde 01/10/2026, depois da validação do pagamento.</span></div></div>
+      <div class="rung"><span class="n"></span><div><span class="who">Elevare</span><b>Gestão das campanhas e relatório semanal <span class="status">Contínuo</span></b><span>Otimização diária; relatório toda segunda-feira com os últimos 7 dias.</span></div></div>
+      <div class="rung"><span class="n"></span><div><span class="who">Elevare</span><b>Roteiros e edição dos vídeos <span class="status">Contínuo</span></b><span>Roteiros enviados pela Elevare (aba Roteiros) e edição em até 5 dias úteis.</span></div></div>
+      <div class="rung"><span class="n"></span><div><span class="who">Elevare</span><b>Carrosséis informativos</b><span>Entregável combinado pra outubro.</span></div></div>
+      <div class="rung"><span class="n"></span><div><span class="who">Elevare</span><b>Testar conta separada pra antes e depois</b><span>Com a glande descaracterizada, pra evitar bloqueio da Meta.</span></div></div>
+      <div class="rung"><span class="n"></span><div><span class="who">Elevare · Larissa Almeida</span><b>Sugestões de bio e destaques <span class="status is-done">Neste plano</span></b><span>Na aba Estruturação do perfil.</span></div></div>
+      <div class="rung"><span class="n"></span><div><span class="who">Dr. Hilton</span><b>Mensagem inicial mais curta</b><span>Menos detalhe técnico e opções de outras marcas de ácido hialurônico (call de 01/10). A versão sugerida está na aba Comercial.</span></div></div>
+      <div class="rung"><span class="n"></span><div><span class="who">Dr. Hilton</span><b>Acessos, saldo e logomarca</b><span>Manter acessos e saldo nas contas de anúncio e enviar a logo em PDF ou PNG.</span></div></div>
+      <div class="rung"><span class="n"></span><div><span class="who">Dr. Hilton</span><b>Estruturar o comercial e aprovar rápido</b><span>Equipe preparada pra demanda de leads, aprovação rápida dos criativos e reuniões mensais.</span></div></div>
+      <div class="rung"><span class="n"></span><div><span class="who">Todos</span><b>Avaliar uma secretária dedicada</b><span>Atendimento exclusivo no WhatsApp.</span></div></div>
     </div>
   </section>
 
@@ -565,7 +637,7 @@
     <div class="sec-head"><span class="sec-num">1.4</span><h2>Análise SWOT</h2></div>
     <p class="sec-desc">O ativo clínico é forte. O problema é transformar especialização médica em percepção de valor, demanda qualificada e conversão mensurável: o produto é premium, mas parte da jornada comercial ainda funciona como consultório convencional.</p>
     <div class="swot">
-      <div class="card"><h3><span class="tag">F</span> Forças</h3><ul>
+      <div class="card is-pos"><span class="kicker">Interno · a favor</span><h3>Forças</h3><ul>
         <li><strong>Andrologia com foco em Peyronie</strong> — sai do "urologista genérico" e ocupa medicina sexual masculina</li>
         <li><strong>Cirurgia reconstrutiva com enxerto, preservando a ereção</strong> — eleva a conversa de "cirurgia" pra tratamento individualizado</li>
         <li><strong>Doppler no diagnóstico</strong> — jornada de avaliação mais técnica</li>
@@ -574,22 +646,22 @@
         <li><strong>Ticket alto e plano cobrindo hospital no Peyronie</strong> — comporta um custo por paciente maior</li>
         <li><strong>Pacientes de outros estados</strong> — sinal de potencial regional pro Peyronie</li>
       </ul></div>
-      <div class="card"><h3><span class="tag">F</span> Fraquezas</h3><ul>
-        <li><strong>Atendimento lento e com poucas tentativas</strong> — lead premium recebe experiência de consultório comum</li>
+      <div class="card is-neg"><span class="kicker">Interno · contra</span><h3>Fraquezas</h3><ul>
+        <li><strong>Atendimento ainda reativo</strong> — poucas tentativas de contato e mensagem padrão: o lead premium recebe a experiência de um consultório comum</li>
         <li><strong>Sem taxa de conversão conhecida</strong> — não dá pra provar se o marketing funciona</li>
         <li><strong>Conversão depende do Dr. Hilton na consulta</strong> — o antes da consulta entrega pouco valor</li>
-        <li><strong>Urofill comparado com ofertas de R$ 4 mil</strong> — o paciente compara preço sem entender a diferença técnica</li>
+        <li><strong>UroFill comparado com ofertas de R$ 4 mil</strong> — o paciente compara preço sem entender a diferença técnica</li>
         <li><strong>Tema constrangedor</strong> — pouco comentário, compartilhamento e depoimento</li>
         <li><strong>Instagram pequeno</strong> (cerca de 2 mil seguidores) frente à reputação</li>
       </ul></div>
-      <div class="card"><h3><span class="tag">O</span> Oportunidades</h3><ul>
+      <div class="card is-pos"><span class="kicker">Externo · a favor</span><h3>Oportunidades</h3><ul>
         <li><strong>Peyronie como território de autoridade</strong> — o paciente pesquisa sozinho e chega confuso: espaço pra educação de alta intenção</li>
         <li><strong>Segunda opinião</strong> — "disseram que você precisa de prótese; será que precisa?"</li>
         <li><strong>Expansão geográfica do Peyronie</strong> — Brasília → Goiás e Entorno → Centro-Oeste</li>
         <li><strong>Estética peniana como medicina</strong> — tirar a comparação de "preço por ml"</li>
         <li><strong>Ecossistema de andrologia</strong> — Peyronie, disfunção erétil, estética e saúde hormonal</li>
       </ul></div>
-      <div class="card"><h3><span class="tag">A</span> Ameaças</h3><ul>
+      <div class="card is-neg"><span class="kicker">Externo · contra</span><h3>Ameaças</h3><ul>
         <li>Guerra de preço no preenchimento peniano</li>
         <li>Não médicos disputando a estética</li>
         <li>Política da Meta pra conteúdo de saúde sexual</li>
@@ -601,18 +673,19 @@
   </section>
 
   <section id="lacunas">
-    <div class="sec-head"><span class="sec-num">1.5</span><h2>Lacunas e próximos passos</h2></div>
+    <div class="sec-head"><span class="sec-num">1.5</span><h2>O que falta confirmar</h2></div>
     <div class="grid2">
       <div class="card"><h3>Ainda não confirmado</h3><ul>
         <li>Taxa de conversão de lead em consulta e em procedimento, por produto</li>
-        <li>Ticket do Urofill: R$ 16 mil (17/08) ou média de R$ 7.500 (01/10)</li>
-        <li>Há quantos anos faz Peyronie e Urofill, e quantos procedimentos já realizou</li>
+        <li>Tempo médio entre o primeiro contato e o procedimento</li>
+        <li>Ticket do UroFill: R$ 16 mil (17/08) ou média de R$ 7.500 (01/10)</li>
+        <li>Há quantos anos faz Peyronie e UroFill, e quantos procedimentos já realizou</li>
         <li>Número de avaliações no Google</li>
-        <li>Enquadramento regulatório do Urofill: nota técnica do CRM-SC publicada pelo CFM (2021) trata aumento peniano estético como experimental; matéria de set/2026 diz que a SBU aceita o preenchimento feito por urologista</li>
+        <li>Enquadramento regulatório do UroFill: nota técnica do CRM-SC publicada pelo CFM (2021) trata aumento peniano estético como experimental; matéria de set/2026 diz que a SBU aceita o preenchimento feito por urologista</li>
       </ul></div>
-      <div class="card"><h3>Vale confirmar com o Dr. Hilton</h3><ul>
+      <div class="card"><h3>Perguntas pra você</h3><ul>
         <li>Quantos leads de setembro e outubro viraram consulta e procedimento?</li>
-        <li>Como o Urofill está respaldado (registro do produto, protocolo, termo de consentimento)?</li>
+        <li>Como o UroFill está respaldado (registro do produto, protocolo, termo de consentimento)?</li>
         <li>A secretária dedicada ao WhatsApp foi contratada?</li>
         <li>Existe sinal pra reservar a consulta?</li>
       </ul></div>
@@ -621,7 +694,7 @@
     <nav class="pager"><a href="#inicio">← Início</a><a href="#tab-persona">Persona →</a></nav>
   </div>
   <div class="tab" id="tab-persona">
-    <header class="tab-head"><span class="tab-num">02</span><h1>Persona</h1><p>São dois públicos diferentes, e cada procedimento tem a sua persona. Quem decide e paga é o próprio paciente. No Peyronie, a mídia precisa vencer a vergonha e o medo de piorar; no Urofill, o medo de dar errado e a comparação de preço.</p></header>
+    <header class="tab-head"><span class="tab-num">Parte 02 de 07</span><h1>Persona</h1><p>São dois públicos diferentes, e cada procedimento tem a sua persona. Quem decide e paga é o próprio paciente. No Peyronie, a mídia precisa vencer a vergonha e o medo de piorar; no UroFill, o medo de dar errado e a comparação de preço.</p></header>
 
   <section id="persona">
     <div class="sec-head"><span class="sec-num">2.1</span><h2>Os dois pacientes</h2></div>
@@ -650,7 +723,7 @@
     <div class="persona-card" style="margin-top:22px;">
       <div class="avatar">RN</div>
       <div>
-        <h3>Rafael Nogueira · Urofill</h3>
+        <h3>Rafael Nogueira · UroFill</h3>
         <div class="persona-meta"><span><b>35 anos</b></span><span>Asa Norte, Noroeste ou Águas Claras</span><span>Pós-graduado, cuida da aparência, classe B/A</span></div>
         <p style="font-size:14px;margin:0;">Sempre teve insatisfação com a espessura do pênis e evita situações por causa disso. Viu anúncios de "harmonização peniana" e conhece quem fez com não médico. Quer se sentir seguro na intimidade, com resultado natural e discrição. <strong>Maior impedimento:</strong> medo de dar errado e o preço de um procedimento médico frente às ofertas mais baratas da internet.</p>
         <span class="confirm-tag">✓ Perfil confirmado na call — a partir de 30 anos; público LGBTQ+ é de 20% a 30% dos pacientes</span>
@@ -669,33 +742,33 @@
 
     <h3 class="sub-h">Níveis de consciência (Schwartz)</h3>
     <div class="ladder">
-      <div class="rung"><span class="n"></span><div><b>Totalmente inconsciente</b><span>Peyronie: sente dor ou vê "um pouco torto" e acha que é da idade. Urofill: sente insegurança e acha que não tem jeito.</span></div></div>
-      <div class="rung"><span class="n"></span><div><b>Consciente do problema</b><span>Peyronie: sabe que a curva atrapalha a relação, mas não sabe o nome; o conteúdo é "isso tem nome e tratamento". Urofill: sabe que a insatisfação afeta a intimidade, não sabe que existe opção médica.</span></div></div>
-      <div class="rung"><span class="n"></span><div><b>Consciente da solução</b><span>Peyronie: sabe que existe cirurgia e tem medo de impotência. Urofill: conhece o preenchimento e compara preço, inclusive com não médicos. É onde chega a maior parte dos leads de Urofill.</span></div></div>
+      <div class="rung"><span class="n"></span><div><b>Totalmente inconsciente</b><span>Peyronie: sente dor ou vê "um pouco torto" e acha que é da idade. UroFill: sente insegurança e acha que não tem jeito.</span></div></div>
+      <div class="rung"><span class="n"></span><div><b>Consciente do problema</b><span>Peyronie: sabe que a curva atrapalha a relação, mas não sabe o nome; o conteúdo é "isso tem nome e tratamento". UroFill: sabe que a insatisfação afeta a intimidade, não sabe que existe opção médica.</span></div></div>
+      <div class="rung"><span class="n"></span><div><b>Consciente da solução</b><span>Peyronie: sabe que existe cirurgia e tem medo de impotência. UroFill: conhece o preenchimento e compara preço, inclusive com não médicos. É onde chega a maior parte dos leads de UroFill.</span></div></div>
       <div class="rung"><span class="n"></span><div><b>Consciente do produto</b><span>Conhece o Dr. Hilton e compara com outros urologistas: formação, Doppler, técnica com enxerto de pericárdio, certificação UroFill® e 214 opiniões.</span></div></div>
-      <div class="rung"><span class="n"></span><div><b>Totalmente consciente</b><span>Quer fazer e precisa de custo e data. No Peyronie, o plano cobre hospital e anestesia e os honorários são particulares; no Urofill, o pacote.</span></div></div>
+      <div class="rung"><span class="n"></span><div><b>Totalmente consciente</b><span>Quer fazer e precisa de custo e data. No Peyronie, o plano cobre hospital e anestesia e os honorários são particulares; no UroFill, o pacote.</span></div></div>
     </div>
   </section>
     <nav class="pager"><a href="#tab-briefing">← Briefing</a><a href="#tab-trafego">Estratégia de tráfego →</a></nav>
   </div>
   <div class="tab" id="tab-trafego">
-    <header class="tab-head"><span class="tab-num">03</span><h1>Estratégia de tráfego</h1><p>Do posicionamento à projeção: onde anunciar, quais campanhas, como funciona o formulário e o que esperar de cada mês.</p><nav class="tab-toc"><a href="#posicionamento">Posicionamento</a><a href="#objetivos">Objetivos</a><a href="#estrategias">Estratégias</a><a href="#plataforma">Google e Meta</a><a href="#campanhas">Campanhas</a><a href="#formulario">Formulário</a><a href="#projecao">Projeção e criativos</a></nav></header>
+    <header class="tab-head"><span class="tab-num">Parte 03 de 07</span><h1>Estratégia de tráfego</h1><p>Do posicionamento à projeção: onde anunciar, quais campanhas, como funciona o formulário e o que esperar de cada mês.</p><nav class="tab-toc"><a href="#posicionamento">Posicionamento</a><a href="#objetivos">Objetivos</a><a href="#estrategias">Estratégias</a><a href="#plataforma">Google e Meta</a><a href="#campanhas">Campanhas</a><a href="#formulario">Formulário</a><a href="#projecao">Projeção e criativos</a></nav></header>
 
   <section id="posicionamento">
     <div class="sec-head"><span class="sec-num">3.1</span><h2>Posicionamento e proposta de valor</h2></div>
-    <p class="sec-desc">"Atendimento humanizado", "qualidade" e "segurança" todo médico pode dizer. O território que vale ocupar não é "urologista em Brasília" nem "médico que faz Urofill": é <strong>andrologia de alta complexidade aplicada à função e à anatomia peniana</strong>.</p>
+    <p class="sec-desc">"Atendimento humanizado", "qualidade" e "segurança" todo médico pode dizer. O território que vale ocupar não é "urologista em Brasília" nem "médico que faz UroFill": é <strong>andrologia de alta complexidade aplicada à função e à anatomia peniana</strong>.</p>
 
     <h3 class="sub-h">Diferenciais competitivos defensáveis</h3>
     <div class="grid3">
       <div class="card"><span class="tag is-ghost">Diferencial 1</span><h3 style="margin-top:10px;">Decisões penianas complexas</h3><p>Não só executar o procedimento: diagnosticar e escolher a estratégia certa pra cada anatomia. No Peyronie, não existe uma cirurgia padrão pra todos.</p><p><strong>Na comunicação:</strong> "Dois homens com Peyronie podem precisar de cirurgias completamente diferentes."</p></div>
       <div class="card"><span class="tag is-ghost">Diferencial 2</span><h3 style="margin-top:10px;">Preservar a função antes de simplificar</h3><p>Corrigir a curvatura buscando preservar a ereção natural sempre que houver indicação. Vender o raciocínio por trás do enxerto, não o enxerto.</p><p><strong>Na comunicação:</strong> "Antes de pensar em prótese, entenda se ela é mesmo necessária."</p></div>
-      <div class="card"><span class="tag is-ghost">Diferencial 3</span><h3 style="margin-top:10px;">Estética peniana como medicina</h3><p>Avaliação, planejamento anatômico, técnica e acompanhamento antes de falar em quantidade de ácido. O paciente deixa de comparar R$ 4 mil com R$ 16 mil e passa a comparar procedimento isolado com jornada médica.</p><p><strong>Na comunicação:</strong> "Você não está comprando mililitros de ácido. Está escolhendo quem vai cuidar de uma estrutura do seu corpo."</p></div>
+      <div class="card"><span class="tag is-ghost">Diferencial 3</span><h3 style="margin-top:10px;">Estética peniana como medicina</h3><p>Avaliação, planejamento anatômico, técnica e acompanhamento antes de falar em quantidade de ácido. O paciente deixa de comparar preço por ml e passa a comparar procedimento isolado com jornada médica.</p><p><strong>Na comunicação:</strong> "Você não está comprando mililitros de ácido. Está escolhendo quem vai cuidar de uma estrutura do seu corpo."</p></div>
     </div>
 
     <h3 class="sub-h">Público prioritário</h3>
     <div class="grid2">
-      <div class="card"><h3>Quem a mídia mira primeiro</h3><p><strong>Peyronie:</strong> homens de 45 a 70 anos em Brasília, com expansão pra Goiás e Entorno.</p><p><strong>Urofill:</strong> homens de 28 a 50 anos em Brasília.</p><ul><li>Pesquisam sozinhos e com vergonha antes de falar com alguém</li><li>Valorizam sigilo e explicação clara</li><li>No Urofill, comparam preço e têm medo de procedimento com não médico</li></ul></div>
-      <div class="card"><h3>O que fica pra depois</h3><p>Disfunção erétil e reposição hormonal entram depois de validar Peyronie e Urofill. Com a verba atual, dividir em quatro frentes enfraquece as duas que pagam o investimento.</p></div>
+      <div class="card"><h3>Quem a mídia mira primeiro</h3><p><strong>Peyronie:</strong> homens de 45 a 70 anos em Brasília, com expansão pra Goiás e Entorno.</p><p><strong>UroFill:</strong> homens de 28 a 50 anos em Brasília.</p><ul><li>Pesquisam sozinhos e com vergonha antes de falar com alguém</li><li>Valorizam sigilo e explicação clara</li><li>No UroFill, comparam preço e têm medo de procedimento com não médico</li></ul></div>
+      <div class="card"><h3>O que fica pra depois</h3><p>Disfunção erétil e reposição hormonal entram depois de validar Peyronie e UroFill. Com a verba atual, dividir em quatro frentes enfraquece as duas que pagam o investimento.</p></div>
     </div>
 
     <h3 class="sub-h">Declaração de posicionamento</h3>
@@ -705,7 +778,7 @@
     <div class="statement is-accent"><p>Cada pênis tem uma anatomia. Cada problema exige uma estratégia.</p><div class="statement-foot">Do diagnóstico à cirurgia ou à estética peniana: decisões individualizadas pra preservar a função, corrigir alterações e buscar resultados naturais.</div></div>
     <div class="quote-strip" style="margin-top:1px;">
       <div class="quote"><strong>Peyronie:</strong> "Não trate uma deformidade complexa com uma solução genérica."</div>
-      <div class="quote"><strong>Urofill:</strong> "Não escolha preenchimento peniano pela quantidade de ácido. Escolha pela medicina por trás do procedimento."</div>
+      <div class="quote"><strong>UroFill:</strong> "Não escolha preenchimento peniano pela quantidade de ácido. Escolha pela medicina por trás do procedimento."</div>
     </div>
     <div class="callout">
       <span class="mark">!</span>
@@ -722,7 +795,7 @@
     <div class="ladder">
       <div class="rung"><span class="n"></span><div><span class="who">Até 31/10/2026</span><b>Inteligência comercial</b><span>Pelo menos 95% dos leads das campanhas registrados no CRM com campanha, produto, consulta agendada, comparecimento, procedimento fechado, valor e motivo da perda.</span></div></div>
       <div class="rung"><span class="n"></span><div><span class="who">Dias 31 a 90</span><b>Melhorar lead → consulta</b><span>Medir em outubro a taxa de lead qualificado → consulta agendada → comparecimento e, até o fim de dezembro, crescer pelo menos 30% na taxa de agendamento. A variável principal aqui é o atendimento.</span></div></div>
-      <div class="rung"><span class="n"></span><div><span class="who">Até o 4º mês</span><b>Receita atribuída ao tráfego</b><span>Pelo menos 2 procedimentos a mais por mês vindos diretamente do tráfego pago, somando Peyronie e Urofill. Com ticket de cerca de R$ 16 mil, isso é perto de R$ 32 mil por mês em receita bruta.</span></div></div>
+      <div class="rung"><span class="n"></span><div><span class="who">Até o 4º mês</span><b>Receita atribuída ao tráfego</b><span>Pelo menos 2 procedimentos a mais por mês vindos diretamente do tráfego pago, somando Peyronie e UroFill. Com ticket entre R$ 7,5 mil e R$ 16 mil, isso é de R$ 15 mil a R$ 32 mil por mês em receita bruta.</span></div></div>
     </div>
     <h3 class="sub-h">Métricas que passam a mandar</h3>
     <div class="funnel"><span class="step">Lead</span><span class="step">Respondeu</span><span class="step">Consulta agendada</span><span class="step">Compareceu</span><span class="step">Procedimento</span></div>
@@ -730,30 +803,30 @@
 
   <section id="estrategias">
     <div class="sec-head"><span class="sec-num">3.3</span><h2>Estratégias e táticas</h2></div>
-    <p class="sec-desc">Peyronie e Urofill não recebem a mesma estratégia: um é problema que a pessoa pesquisa, o outro é desejo que precisa ser despertado com segurança.</p>
+    <p class="sec-desc">Peyronie e UroFill não recebem a mesma estratégia: um é problema que a pessoa pesquisa, o outro é desejo que precisa ser despertado com segurança.</p>
     <div class="strategy">
       <div class="strategy-head"><span class="tag">Estratégia 1</span><h3>Capturar quem já procura (Peyronie)</h3></div>
       <p>O paciente já percebeu o problema e pesquisa sozinho. Prioridade: busca no Google e uma página que ajude a decidir.</p>
       <div class="grid2">
         <div class="card"><h3>Pesquisa no Google</h3><p>Grupos de alta intenção: doença de Peyronie tratamento, cirurgia Peyronie, pênis curvado tratamento, especialista Peyronie Brasília, prótese ou cirurgia Peyronie.</p></div>
-        <div class="card"><h3>Página orientada à decisão</h3><p>Problema → consequências → por que cada caso é diferente → avaliação e Doppler → técnicas → quem é o Dr. Hilton → agendar. Não uma biografia longa.</p></div>
+        <div class="card"><h3>Página orientada à decisão</h3><p>A página de Peyronie que já existe ganha a ordem de uma página de decisão: problema → consequências → por que cada caso é diferente → avaliação e Doppler → técnicas → quem é o Dr. Hilton → agendar.</p></div>
         <div class="card"><h3>Expansão geográfica</h3><p>Brasília → DF e Goiás → Centro-Oeste, escalando pelo número de consultas e cirurgias, não pelo CPL.</p></div>
         <div class="card"><h3>Segunda opinião</h3><p>Campanha pra quem ouviu que precisa de prótese: avaliação especializada antes de uma decisão irreversível, sem dizer que o outro médico errou.</p></div>
       </div>
     </div>
     <div class="strategy">
-      <div class="strategy-head"><span class="tag">Estratégia 2</span><h3>Criar demanda com educação (Urofill)</h3></div>
+      <div class="strategy-head"><span class="tag">Estratégia 2</span><h3>Criar demanda com educação (UroFill)</h3></div>
       <p>O desejo existe, mas a pessoa não procura a marca. Na Meta, vender primeiro o critério médico, depois o procedimento.</p>
       <div class="grid2">
         <div class="card"><h3>Criativos de quebra de percepção</h3><p>"O erro é achar que preenchimento peniano é só escolher quantos ml colocar."</p></div>
         <div class="card"><h3>Comparação sem atacar ninguém</h3><p>Preço não é a única variável, produto também não, quantidade também não: entram anatomia, planejamento, aplicação e acompanhamento.</p></div>
         <div class="card"><h3>Remarketing educativo</h3><p>Quem visitou e não converteu vê segurança, naturalidade, duração, recuperação, quem não deveria fazer e expectativa realista.</p></div>
-        <div class="card"><h3>Vídeo do Dr. Hilton</h3><p>Em setembro, o vídeo de Urofill trouxe 51 leads a R$ 11,86 e as imagens foram pausadas: o formato principal é o Dr. Hilton explicando.</p></div>
+        <div class="card"><h3>Vídeo do Dr. Hilton</h3><p>Em setembro, o vídeo de UroFill trouxe 51 leads a R$ 11,86 e as imagens foram pausadas: o formato principal é o Dr. Hilton explicando.</p></div>
       </div>
     </div>
     <div class="strategy">
       <div class="strategy-head"><span class="tag">Estratégia 3</span><h3>Atendimento como parte da mídia</h3></div>
-      <p>Pra um procedimento de R$ 16 mil, o atendimento precisa parecer tão especializado quanto a medicina que está sendo vendida.</p>
+      <p>Pra um procedimento de R$ 7,5 mil a R$ 16 mil, o atendimento precisa parecer tão especializado quanto a medicina que está sendo vendida.</p>
       <div class="grid2">
         <div class="card"><h3>CRM simples</h3><p>Novo lead → contato feito → qualificado → consulta agendada → confirmada → compareceu → proposta → procedimento fechado → perdido com motivo.</p></div>
         <div class="card"><h3>Tempo de resposta</h3><p>Até 5 minutos em horário comercial. A demora é o que mais desperdiça lead pago.</p></div>
@@ -772,12 +845,12 @@
     <p class="sec-desc">As duas plataformas já estão ativas, mas cada uma serve a um produto e a um momento do paciente. A verba entre elas é revista toda semana pelo custo por consulta, não pelo custo por lead.</p>
     <div class="grid2">
       <div class="card platform is-now"><span class="tag">Google · Peyronie</span><h3 style="margin-top:12px;">Captura quem já está procurando</h3><p>O homem que digita "cirurgia de Peyronie" ou "pênis curvado tratamento" já sabe que tem um problema e quer resolver. Na Meta, o lead de Peyronie custou de R$ 30 a R$ 77 na semana de 28/09; na busca, a intenção alta compensa um clique mais caro, e os concorrentes já estão lá.</p></div>
-      <div class="card platform is-now"><span class="tag">Meta · Urofill</span><h3 style="margin-top:12px;">Desperta o desejo com segurança</h3><p>O homem insatisfeito com a espessura raramente pesquisa o nome do procedimento. A Meta o alcança no feed, com o Dr. Hilton explicando. Em setembro, o Urofill teve lead de R$ 11 a R$ 13, e o vídeo é o formato que funciona.</p></div>
+      <div class="card platform is-now"><span class="tag">Meta · UroFill</span><h3 style="margin-top:12px;">Desperta o desejo com segurança</h3><p>O homem insatisfeito com a espessura raramente pesquisa o nome do procedimento. A Meta o alcança no feed, com o Dr. Hilton explicando. Em setembro, o UroFill teve lead de R$ 11 a R$ 13, e o vídeo é o formato que funciona.</p></div>
     </div>
     <div class="callout" style="margin-top:22px;">
       <span class="mark">→</span>
       <div>
-        <p><strong>Resumo:</strong> o Google captura a demanda do Peyronie; a Meta cria a demanda do Urofill.</p>
+        <p><strong>Resumo:</strong> o Google captura a demanda do Peyronie; a Meta cria a demanda do UroFill.</p>
         <p>A Meta continua com conteúdo educativo de Peyronie em verba menor, pra quem ainda não sabe o nome do que tem. A divisão de verba segue o custo por consulta de cada produto.</p>
       </div>
     </div>
@@ -785,17 +858,17 @@
 
   <section id="campanhas">
     <div class="sec-head"><span class="sec-num">3.5</span><h2>As campanhas</h2></div>
-    <p class="sec-desc">Mesma autoridade, dois produtos que se comportam de forma diferente no tráfego pago: o Urofill gera volume barato, o Peyronie tem pouco volume e ciclo mais longo. São três campanhas, e a decisão final de verba é tomada junto, na call.</p>
+    <p class="sec-desc">Mesma autoridade, dois produtos que se comportam de forma diferente no tráfego pago: o UroFill gera volume barato, o Peyronie tem pouco volume e ciclo mais longo. São três campanhas, e a decisão final de verba é tomada junto, na call.</p>
     <h3 class="sub-h">Como escolhemos</h3>
     <div class="criteria">
       <div class="card"><span class="crit-n">01</span><h3>Onde a autoridade vira vantagem</h3><p>Certificação UroFill®, enxerto de pericárdio e Doppler precisam ser argumento direto na conversão.</p></div>
-      <div class="card"><span class="crit-n">02</span><h3>Ticket que paga o canal</h3><p>Com cerca de R$ 16 mil por procedimento, um fechamento a mais por mês paga a verba várias vezes.</p></div>
-      <div class="card"><span class="crit-n">03</span><h3>Intenção do paciente</h3><p>Quem pesquisa (Peyronie) vai pro Google; quem precisa ser despertado (Urofill) vai pra Meta.</p></div>
+      <div class="card"><span class="crit-n">02</span><h3>Ticket que paga o canal</h3><p>Com R$ 7,5 mil a R$ 16 mil por procedimento, um fechamento a mais por mês paga de 2 a 5 meses de verba.</p></div>
+      <div class="card"><span class="crit-n">03</span><h3>Intenção do paciente</h3><p>Quem pesquisa (Peyronie) vai pro Google; quem precisa ser despertado (UroFill) vai pra Meta.</p></div>
       <div class="card"><span class="crit-n">04</span><h3>Capacidade de atendimento</h3><p>Só faz sentido gerar o volume que o atendimento consegue responder em 5 minutos.</p></div>
     </div>
 
     <div class="rota">
-      <div class="rota-head"><span class="rota-letter">A</span><div><h3>Urofill pra homens que querem mais espessura com segurança</h3><p>A campanha que já gera volume e o melhor custo por lead da conta.</p></div><span class="tag is-ghost rota-plat">Meta Ads</span></div>
+      <div class="rota-head"><span class="rota-letter">A</span><div><h3>UroFill pra homens que querem mais espessura com segurança</h3><p>A campanha que já gera volume e o melhor custo por lead da conta.</p></div><span class="tag is-ghost rota-plat">Meta Ads</span></div>
       <div class="rota-metrics">
         <div><div class="k">Público</div><div class="v">Homens de 28 a 50 anos, Brasília</div></div>
         <div><div class="k">Objetivo</div><div class="v">Leads de formulário</div></div>
@@ -806,8 +879,8 @@
       <h4>A tese, em uma frase</h4>
       <p>O homem insatisfeito com a espessura compara preço com não médicos; o anúncio mostra que é um procedimento médico, feito por urologista certificado, com avaliação e acompanhamento.</p>
       <h4>Por que encaixa no seu perfil</h4>
-      <ul><li><strong>Dado real:</strong> 67 dos 103 leads de setembro foram de Urofill.</li><li><strong>Autoridade direta:</strong> a certificação UroFill® responde ao medo de "cair na mão de não médico".</li><li><strong>Formato validado:</strong> o vídeo do Dr. Hilton explicando é o criativo que mais converte.</li></ul>
-      <div class="rota-box"><div class="k">Ponto de atenção</div><ul><li>Lead barato atrai quem espera gastar pouco: a política de não informar valor de início e as opções de outras marcas de ácido hialurônico filtram isso no atendimento.</li><li>Antes de escalar, confirmar o respaldo regulatório do Urofill (lacuna 1.5).</li></ul></div>
+      <ul><li><strong>Dado real:</strong> 67 dos 103 leads de setembro foram de UroFill.</li><li><strong>Autoridade direta:</strong> a certificação UroFill® responde ao medo de "cair na mão de não médico".</li><li><strong>Formato validado:</strong> o vídeo do Dr. Hilton explicando é o criativo que mais converte.</li></ul>
+      <div class="rota-box"><div class="k">Ponto de atenção</div><ul><li>Lead barato atrai quem espera gastar pouco: a política de não informar valor de início e as opções de outras marcas de ácido hialurônico filtram isso no atendimento.</li><li>Antes de escalar, confirmar o respaldo regulatório do UroFill (lacuna 1.5).</li></ul></div>
       <h4>O papel dela</h4>
       <p>Campanha de volume, que alimenta o atendimento todo dia. É onde a conversão lead → consulta vai ser medida primeiro.</p>
       <div class="rota-box is-accent"><div class="k">A contrapartida</div><p>Gravar os vídeos da aba Roteiros. A Elevare edita em até 5 dias úteis.</p></div>
@@ -848,7 +921,7 @@
 
     <h3 class="sub-h">Lado a lado</h3>
     <div class="tbl-wrap"><table>
-      <thead><tr><th></th><th>A · Urofill</th><th>B · Peyronie busca</th><th>C · Peyronie educativo</th></tr></thead>
+      <thead><tr><th></th><th>A · UroFill</th><th>B · Peyronie busca</th><th>C · Peyronie educativo</th></tr></thead>
       <tbody>
         <tr><td class="name">Plataforma</td><td>Meta</td><td>Google</td><td>Meta</td></tr>
         <tr><td class="name">Natureza</td><td>Desejo estético</td><td>Problema pesquisado</td><td>Problema escondido</td></tr>
@@ -857,7 +930,7 @@
         <tr><td class="name">Papel</td><td>Volume e medição</td><td>Receita</td><td>Educação e remarketing</td></tr>
       </tbody>
     </table></div>
-    <div class="statement is-accent" style="margin-top:22px;"><p>Manter o Urofill como motor de volume na Meta, o Peyronie de busca no Google como motor de receita, e o educativo com verba menor, revendo a divisão toda semana.</p><div class="statement-foot">O vencedor não é o lead mais barato: é a combinação de custo por lead, qualidade da conversa, consulta agendada e procedimento fechado.</div></div>
+    <div class="statement is-accent" style="margin-top:22px;"><p>Manter o UroFill como motor de volume na Meta, o Peyronie de busca no Google como motor de receita, e o educativo com verba menor, revendo a divisão toda semana.</p><div class="statement-foot">O vencedor não é o lead mais barato: é a combinação de custo por lead, qualidade da conversa, consulta agendada e procedimento fechado.</div></div>
   </section>
 
   <section id="formulario">
@@ -874,12 +947,12 @@
     <div class="tbl-wrap"><table>
       <thead><tr><th>Pergunta</th><th>Opções de resposta</th><th>Pra que serve</th></tr></thead>
       <tbody>
-        <tr><td class="name">P1 · Sobre qual procedimento quer falar</td><td>Urofill · Correção de curvatura (Peyronie) · Já fiz um procedimento e quero corrigir · Ainda não sei</td><td>Define a trilha do atendimento.</td></tr>
+        <tr><td class="name">P1 · Sobre qual procedimento quer falar</td><td>UroFill · Correção de curvatura (Peyronie) · Já fiz um procedimento e quero corrigir · Ainda não sei</td><td>Define a trilha do atendimento.</td></tr>
         <tr><td class="name">P2 · Interesse na consulta particular de R$ 600</td><td>Sim, quero agendar · Sim, mas quero entender antes · Prefiro não agendar por enquanto</td><td>O paciente já chega sabendo do valor da consulta.</td></tr>
         <tr><td class="name">P3 · Quando pretende resolver</td><td>O quanto antes (neste mês) · Nos próximos 2 a 3 meses · Sem prazo definido · Só pesquisando</td><td>Define quem é atendido primeiro.</td></tr>
       </tbody>
     </table></div>
-    <p class="note">Formulário traz mais volume que mensagem direta, mas o lead esfria rápido: o resultado depende de quanto tempo o atendimento leva pra responder. A pergunta sobre plano de saúde saiu do formulário do Urofill em 01/10 (atraía lead desqualificado).</p>
+    <p class="note">Formulário traz mais volume que mensagem direta, mas o lead esfria rápido: o resultado depende de quanto tempo o atendimento leva pra responder. A pergunta sobre plano de saúde saiu do formulário do UroFill em 01/10 (atraía lead desqualificado).</p>
   </section>
 
   <section id="projecao">
@@ -895,14 +968,15 @@
         <div class="proj-row is-total"><span>Fechamentos</span><b>Mês de medição</b></div>
       </div>
       <div class="proj-col">
-        <div class="k">Novembro · Primeira leitura de conversão</div>
-        <div class="proj-row"><span>Leads</span><b>Volume de outubro, com custo menor</b></div>
-        <div class="proj-row"><span>Lead → consulta</span><b>Medido em outubro</b></div>
-        <div class="proj-row"><span>Consulta → procedimento</span><b>Medido em outubro</b></div>
-        <div class="proj-row is-total"><span>Meta do 4º mês</span><b>+2 procedimentos/mês ≈ R$ 32 mil</b></div>
+        <div class="k">Meta do 4º mês · o que precisa acontecer</div>
+        <div class="proj-row"><span>Leads por mês</span><b>≈ 137</b></div>
+        <div class="proj-row"><span>Lead → consulta (exemplo)</span><b>10% ≈ 14 consultas</b></div>
+        <div class="proj-row"><span>Consulta → procedimento (exemplo)</span><b>1 em 7 ≈ 2</b></div>
+        <div class="proj-row"><span>Lead → procedimento necessário</span><b>≈ 1,5%</b></div>
+        <div class="proj-row is-total"><span>Resultado</span><b>+2 procedimentos ≈ R$ 15 a 32 mil</b></div>
       </div>
     </div>
-    <p class="note">De onde vêm os números: setembro real (R$ 2.067, 103 leads, CPL R$ 20,07) e a projeção da Elevare pra outubro (137 leads a R$ 19,07 com R$ 2.610). Ainda não existe taxa de conversão medida, por isso novembro não traz número de fechamento: ele sai do CRM de outubro. Referência pra dimensionar: um único procedimento de cerca de R$ 16 mil equivale a mais de cinco meses da verba atual.</p>
+    <p class="note">De onde vêm os números: setembro real (R$ 2.067, 103 leads, CPL R$ 20,07) e a projeção da Elevare pra outubro (137 leads a R$ 19,07 com R$ 2.610). A coluna da direita não é previsão: é a conta de quanto o atendimento precisa converter pra bater a meta, com taxas de exemplo; as taxas reais saem do CRM de outubro. Pra dimensionar: um único procedimento paga de 2 a 5 meses da verba atual, conforme o produto.</p>
 
     <h3 class="sub-h">Quantos criativos por mês, e de que tipo</h3>
     <div class="grid2">
@@ -911,13 +985,13 @@
     </div>
     <div class="card" style="border:1px solid var(--line);border-top:none;">
       <h3>A lógica do número</h3>
-      <p>Cada campanha precisa de 2 a 3 variações de vídeo pra Meta testar ângulos, e criativo de tráfego costuma cansar em 3 a 5 semanas. Seis vídeos por mês mantêm Urofill e Peyronie com criativo novo. Gravando em lote, uma manhã rende os seis; a Elevare envia os roteiros e edita em até 5 dias úteis.</p>
+      <p>Cada campanha precisa de 2 a 3 variações de vídeo pra Meta testar ângulos, e criativo de tráfego costuma cansar em 3 a 5 semanas. Seis vídeos por mês mantêm UroFill e Peyronie com criativo novo. Gravando em lote, uma manhã rende os seis; a Elevare envia os roteiros e edita em até 5 dias úteis.</p>
     </div>
   </section>
     <nav class="pager"><a href="#tab-persona">← Persona</a><a href="#tab-perfil">Estruturação do perfil →</a></nav>
   </div>
   <div class="tab" id="tab-perfil">
-    <header class="tab-head"><span class="tab-num">04</span><h1>Estruturação do perfil</h1><p>O que precisa estar no perfil antes das campanhas: bio, destaques, fixados e a linha editorial.</p><nav class="tab-toc"><a href="#perfil">Bio, destaques e fixados</a><a href="#editorial">Linha editorial</a></nav></header>
+    <header class="tab-head"><span class="tab-num">Parte 04 de 07</span><h1>Estruturação do perfil</h1><p>O que precisa estar no perfil antes das campanhas: bio, destaques, fixados e a linha editorial.</p><nav class="tab-toc"><a href="#perfil">Bio, destaques e fixados</a><a href="#editorial">Linha editorial</a></nav></header>
 
   <section id="perfil">
     <div class="sec-head"><span class="sec-num">4.1</span><h2>Bio, destaques e fixados</h2></div>
@@ -985,7 +1059,7 @@
           <p><strong>Durante:</strong> como foi o atendimento, o que surpreendeu.</p>
           <p><strong>Depois:</strong> o que mudou (sem promessa de resultado) e pra quem recomendaria.</p>
           <p>Sem vídeo: carrossel com prints de avaliações reais do Google, com uma frase de abertura.</p></div>
-        <div class="legenda"><div class="art-k">Ângulo neste perfil</div><p>Os pacientes desse tema dificilmente gravam. Usar o carrossel com 4 avaliações reais da Doctoralia (sem nome), abrindo com "214 homens contaram como foi. Estes são alguns." e escolhendo as que falam de paciência, explicação e sigilo.</p></div>
+        <div class="legenda"><div class="art-k">Ângulo neste perfil</div><p>Os pacientes desse tema dificilmente gravam. Usar o carrossel com 4 avaliações reais da Doctoralia (sem nome), abrindo com "214 pacientes avaliaram o atendimento. Estes são alguns." e escolhendo as que falam de paciência, explicação e sigilo.</p></div>
         <p class="fixado-foot"><strong>Evitar:</strong> elogio solto, depoimento sem autorização, antes e depois fora das regras do CFM.</p>
       </div>
     </div>
@@ -1002,7 +1076,7 @@
     <div class="pillars">
       <div class="card"><span class="tag is-ghost">Pilar 1</span><h3 style="margin-top:10px;">Peyronie sem desinformação</h3><p><strong>Objetivo:</strong> dominar a categoria.</p><ul><li>Primeiros sinais e quando procurar</li><li>Relação com disfunção erétil</li><li>Quando a cirurgia é indicada</li><li>Mitos sobre ondas de choque</li></ul><p class="hook">"O que ninguém explica sobre Peyronie."</p></div>
       <div class="card"><span class="tag is-ghost">Pilar 2</span><h3 style="margin-top:10px;">Decisão cirúrgica individualizada</h3><p><strong>Objetivo:</strong> autoridade em casos complexos.</p><ul><li>Por que o grau da curva não conta toda a história</li><li>Quando considero enxerto</li><li>Quando uma prótese é mesmo necessária</li><li>O que o Doppler muda na decisão</li></ul><p class="hook">"Dois homens podem ter Peyronie e precisar de cirurgias diferentes."</p></div>
-      <div class="card"><span class="tag is-ghost">Pilar 3</span><h3 style="margin-top:10px;">Estética com responsabilidade médica</h3><p><strong>Objetivo:</strong> tirar o Urofill da comparação de preço.</p><ul><li>O que o preenchimento faz e o que não faz</li><li>Expectativa realista e naturalidade</li><li>Diferença entre produtos e duração</li><li>Quando não realizar</li></ul><p class="hook">"Antes de pensar em quantos ml, pense em quem vai fazer."</p></div>
+      <div class="card"><span class="tag is-ghost">Pilar 3</span><h3 style="margin-top:10px;">Estética com responsabilidade médica</h3><p><strong>Objetivo:</strong> tirar o UroFill da comparação de preço.</p><ul><li>O que o preenchimento faz e o que não faz</li><li>Expectativa realista e naturalidade</li><li>Diferença entre produtos e duração</li><li>Quando não realizar</li></ul><p class="hook">"Antes de pensar em quantos ml, pense em quem vai fazer."</p></div>
       <div class="card"><span class="tag is-ghost">Pilar 4</span><h3 style="margin-top:10px;">Função sexual masculina</h3><p><strong>Objetivo:</strong> preparar a expansão pra andrologia.</p><ul><li>Disfunção erétil e circulação</li><li>Testosterona e libido</li><li>Envelhecimento sexual masculino</li></ul><p class="hook">"Ereção também é saúde vascular."</p></div>
       <div class="card"><span class="tag is-ghost">Pilar 5</span><h3 style="margin-top:10px;">Confiança e bastidores</h3><p><strong>Objetivo:</strong> prova sem expor paciente.</p><ul><li>Como é a primeira consulta</li><li>O exame de Doppler explicado</li><li>Perguntas frequentes</li><li>Avaliações sem identificação</li></ul><p class="hook">"Como funciona a primeira consulta, do começo ao fim."</p></div>
     </div>
@@ -1010,7 +1084,7 @@
     <nav class="pager"><a href="#tab-trafego">← Estratégia de tráfego</a><a href="#tab-roteiros">Roteiros →</a></nav>
   </div>
   <div class="tab" id="tab-roteiros">
-    <header class="tab-head"><span class="tab-num">05</span><h1>Roteiros</h1><p>Os anúncios do nicho que estão há mais tempo no ar e os 6 roteiros de vídeo.</p><nav class="tab-toc"><a href="#referencias">Referências da Biblioteca de Anúncios</a><a href="#roteiros-video">Os 6 roteiros</a></nav></header>
+    <header class="tab-head"><span class="tab-num">Parte 05 de 07</span><h1>Roteiros</h1><p>Os anúncios do nicho que estão há mais tempo no ar e os 6 roteiros de vídeo.</p><nav class="tab-toc"><a href="#referencias">Referências da Biblioteca de Anúncios</a><a href="#roteiros-video">Os 6 roteiros</a></nav></header>
 
   <section id="referencias">
     <div class="sec-head"><span class="sec-num">5.1</span><h2>Referências da Biblioteca de Anúncios</h2></div>
@@ -1065,20 +1139,20 @@
     </div>
 
     <div class="roteiro">
-      <div class="roteiro-head"><span class="rot-n">R2</span><div><span class="tag is-ghost">Biblioteca · Urofill</span><h3>"Preenchimento é só escolher quantos ml?"</h3></div></div>
+      <div class="roteiro-head"><span class="rot-n">R2</span><div><span class="tag is-ghost">Biblioteca · UroFill</span><h3>"Preenchimento é só escolher quantos ml?"</h3></div></div>
       <div class="rota-metrics" style="margin-top:4px;">
         <div><div class="k">Formato</div><div class="v">Reels 9:16, fala pra câmera com objeto</div></div>
         <div><div class="k">Duração</div><div class="v">30 a 40 s</div></div>
         <div><div class="k">Quem grava</div><div class="v">Dr. Hilton</div></div>
-        <div><div class="k">Campanha</div><div class="v">A · Urofill</div></div>
+        <div><div class="k">Campanha</div><div class="v">A · UroFill</div></div>
       </div>
-      <p class="note" style="margin:0 0 12px;"><strong>Referência:</strong> Dr. Bruno Urologista, no ar desde 19/01/2026 · <a href="https://www.facebook.com/ads/library/?id=4452456294982134" target="_blank" rel="noopener">ver anúncio</a>. O que aproveitamos: o objeto na mão que quebra uma crença no gancho e a virada "o que importa de verdade é...". Deixamos de fora as promessas de desempenho do original.</p>
+      <p class="note" style="margin:0 0 12px;"><strong>Referência:</strong> Dr. Bruno Urologista, no ar desde 19/01/2026 · <a href="https://www.facebook.com/ads/library/?id=4452456294982134" target="_blank" rel="noopener">ver anúncio</a>. O que aproveitamos: o objeto na mão que quebra uma crença no gancho e a virada "o que importa de verdade é...". Deixamos de fora as promessas de desempenho do original. Atende ao pedido de 01/10: destacar a técnica americana com mais de 10 anos; a certificação exclusiva no DF fica pra conversa individual (regra do CFM).</p>
       <div class="tbl-wrap"><table class="script">
         <thead><tr><th>Momento</th><th>Fala</th><th>Na tela</th></tr></thead>
         <tbody>
           <tr><td class="name">Gancho · 0 a 3 s</td><td>(segurando uma seringa sem marca) "Você acha que preenchimento é só escolher quantos ml colocar?"</td><td>"Quantos ml você precisa?"</td></tr>
           <tr><td class="name">3 a 18 s</td><td>"O ácido é só uma parte. O que define um resultado natural e proporcional é a avaliação da sua anatomia, o planejamento, a técnica e quem acompanha depois."</td><td>Avaliação · Planejamento · Técnica · Acompanhamento</td></tr>
-          <tr><td class="name">18 a 28 s</td><td>"Procedimento em região íntima é ato médico. Eu sou urologista e certificado na técnica UroFill®, feita em consultório, com anestesia local."</td><td>"Urologista certificado UroFill®"</td></tr>
+          <tr><td class="name">18 a 28 s</td><td>"Procedimento em região íntima é ato médico. A técnica UroFill® foi desenvolvida nos Estados Unidos e é usada há mais de 10 anos. Eu sou urologista e certificado nela, e o procedimento é feito em consultório, com anestesia local."</td><td>"Urologista certificado UroFill®"</td></tr>
           <tr><td class="name">Chamada pra ação</td><td>"Se você pensa nisso há tempo, comece pela avaliação. Sigilo do primeiro contato ao pós."</td><td>Dr. Hilton Monteiro · CRM-DF 17.083 · RQE 12.495 / 14.863</td></tr>
         </tbody>
       </table></div>
@@ -1086,8 +1160,8 @@
     </div>
 
     <div class="roteiro">
-      <div class="roteiro-head"><span class="rot-n">R3</span><div><span class="tag is-ghost">Antes e depois · Peyronie</span><h3>"Ele chegou aqui depois de um ano e meio em silêncio"</h3></div></div>
-      <div class="rota-box"><div class="k">Adaptado</div><p>Antes e depois da situação, não da imagem: a Meta bloqueia imagem da região íntima e o CFM só permite antes e depois com caráter educativo. O Dr. Hilton narra um caso real, sem identificar o paciente e sem prometer resultado.</p></div>
+      <div class="roteiro-head"><span class="rot-n">R3</span><div><span class="tag is-ghost">Antes e depois · Peyronie</span><h3>"Ele chegou aqui depois de muito tempo em silêncio"</h3></div></div>
+      <div class="rota-box"><div class="k">Adaptado</div><p>Antes e depois da situação, não da imagem: a Meta bloqueia imagem da região íntima e o CFM só permite antes e depois com caráter educativo. O Dr. Hilton narra um caso real dele, escolhido por ele, sem nada que identifique o paciente e sem prometer resultado. Os trechos entre colchetes são pra completar com os detalhes desse caso.</p></div>
       <div class="rota-metrics" style="margin-top:14px;">
         <div><div class="k">Formato</div><div class="v">Reels 9:16, fala pra câmera</div></div>
         <div><div class="k">Duração</div><div class="v">40 a 50 s</div></div>
@@ -1097,9 +1171,9 @@
       <div class="tbl-wrap"><table class="script">
         <thead><tr><th>Momento</th><th>Fala</th><th>Na tela</th></tr></thead>
         <tbody>
-          <tr><td class="name">Gancho · 0 a 3 s</td><td>"Ele chegou aqui depois de um ano e meio sem conseguir falar disso com ninguém."</td><td>"Antes"</td></tr>
-          <tr><td class="name">3 a 18 s</td><td>"Tinha percebido a curvatura, sentia dor e começou a evitar a esposa. Achou que era da idade e que ia passar."</td><td>"Dor · curvatura · evitava a intimidade"</td></tr>
-          <tr><td class="name">18 a 35 s</td><td>"Na avaliação, com exame e Doppler, vimos que o caso dele pedia uma estratégia específica, pensada pra preservar a ereção natural. Não existe cirurgia igual pra todo mundo."</td><td>"Depois: diagnóstico e plano pro caso dele"</td></tr>
+          <tr><td class="name">Gancho · 0 a 3 s</td><td>"Ele chegou aqui depois de [quanto tempo] sem conseguir falar disso com ninguém."</td><td>"Antes"</td></tr>
+          <tr><td class="name">3 a 18 s</td><td>"[O que ele sentia e o que passou a evitar.] Achou que era da idade e que ia passar."</td><td>"Dor · curvatura · evitava a intimidade"</td></tr>
+          <tr><td class="name">18 a 35 s</td><td>"Na avaliação, com exame e Doppler, vimos que o caso dele pedia [a estratégia indicada pra ele]. Não existe cirurgia igual pra todo mundo."</td><td>"Depois: diagnóstico e plano pro caso dele"</td></tr>
           <tr><td class="name">Chamada pra ação</td><td>"O que mais muda a história é não esperar. Se você se reconheceu, agende uma avaliação."</td><td>Dr. Hilton Monteiro · CRM-DF 17.083 · RQE 12.495 / 14.863</td></tr>
         </tbody>
       </table></div>
@@ -1107,19 +1181,19 @@
     </div>
 
     <div class="roteiro">
-      <div class="roteiro-head"><span class="rot-n">R4</span><div><span class="tag is-ghost">Antes e depois · Urofill</span><h3>"O que muda, na anatomia, com o preenchimento"</h3></div></div>
+      <div class="roteiro-head"><span class="rot-n">R4</span><div><span class="tag is-ghost">Antes e depois · UroFill</span><h3>"O que muda, na anatomia, com o preenchimento"</h3></div></div>
       <div class="rota-box"><div class="k">Adaptado</div><p>Ilustração anatômica no lugar de foto: a Meta bloqueia imagem da região íntima e o CFM só permite antes e depois com caráter educativo. O Dr. Hilton explica, com desenho ou modelo 3D do corte transversal, onde o ácido é aplicado e por que a proporção importa.</p></div>
       <div class="rota-metrics" style="margin-top:14px;">
         <div><div class="k">Formato</div><div class="v">Reels 9:16, fala + ilustração</div></div>
         <div><div class="k">Duração</div><div class="v">35 a 45 s</div></div>
         <div><div class="k">Quem grava</div><div class="v">Dr. Hilton (ilustração na edição)</div></div>
-        <div><div class="k">Campanha</div><div class="v">A · Urofill</div></div>
+        <div><div class="k">Campanha</div><div class="v">A · UroFill</div></div>
       </div>
       <div class="tbl-wrap"><table class="script">
         <thead><tr><th>Momento</th><th>Fala</th><th>Na tela</th></tr></thead>
         <tbody>
           <tr><td class="name">Gancho · 0 a 3 s</td><td>"Vou te mostrar o que muda de verdade com o preenchimento, e o que não muda."</td><td>Ilustração do corte transversal, "antes"</td></tr>
-          <tr><td class="name">3 a 20 s</td><td>"O preenchimento aumenta a espessura, a circunferência. Não aumenta o comprimento em ereção. Quem promete isso não está sendo honesto com você."</td><td>Ilustração "depois" com a camada de ácido destacada</td></tr>
+          <tr><td class="name">3 a 20 s</td><td>"O preenchimento aumenta a espessura, a circunferência. Não aumenta o comprimento em ereção. É a primeira coisa que eu explico na consulta."</td><td>Ilustração "depois" com a camada de ácido destacada</td></tr>
           <tr><td class="name">20 a 35 s</td><td>"O que deixa natural é respeitar a sua anatomia: a quantidade, a distribuição e o acompanhamento. Por isso tudo começa na avaliação."</td><td>"Natural = proporcional à sua anatomia"</td></tr>
           <tr><td class="name">Chamada pra ação</td><td>"Quer entender o que faz sentido pro seu caso? Agende uma avaliação, com total sigilo."</td><td>Dr. Hilton Monteiro · CRM-DF 17.083 · RQE 12.495 / 14.863</td></tr>
         </tbody>
@@ -1149,13 +1223,13 @@
     </div>
 
     <div class="roteiro">
-      <div class="roteiro-head"><span class="rot-n">R6</span><div><span class="tag is-ghost">Depoimento · Urofill</span><h3>"O que um paciente me disse depois"</h3></div></div>
+      <div class="roteiro-head"><span class="rot-n">R6</span><div><span class="tag is-ghost">Depoimento · UroFill</span><h3>"O que um paciente me disse depois"</h3></div></div>
       <div class="rota-box"><div class="k">Adaptado</div><p>Depoimento sem rosto: áudio real de um paciente que autorizou por escrito, com a voz sem identificação e a fala em legenda. Sem áudio autorizado, o Dr. Hilton conta o que o paciente disse, sem nada que o identifique.</p></div>
       <div class="rota-metrics" style="margin-top:14px;">
         <div><div class="k">Formato</div><div class="v">Reels 9:16, áudio + legenda</div></div>
         <div><div class="k">Duração</div><div class="v">25 a 35 s</div></div>
         <div><div class="k">Quem grava</div><div class="v">Paciente (áudio) + Dr. Hilton</div></div>
-        <div><div class="k">Campanha</div><div class="v">A · Urofill</div></div>
+        <div><div class="k">Campanha</div><div class="v">A · UroFill</div></div>
       </div>
       <div class="tbl-wrap"><table class="script">
         <thead><tr><th>Momento</th><th>Fala</th><th>Na tela</th></tr></thead>
@@ -1178,13 +1252,13 @@
     <nav class="pager"><a href="#tab-perfil">← Estruturação do perfil</a><a href="#tab-comercial">Comercial →</a></nav>
   </div>
   <div class="tab" id="tab-comercial">
-    <header class="tab-head"><span class="tab-num">06</span><h1>Comercial</h1><p>Manual de atendimento pra quem atende os leads: do primeiro contato à consulta particular de Peyronie e de Urofill.</p><nav class="tab-toc"><a href="#atendimento-fluxo">O fluxo de atendimento</a><a href="#qualificacao">Qualificação</a><a href="#roteiro-whatsapp">Roteiro no WhatsApp</a><a href="#objecoes">Matriz de objeções</a><a href="#tom-voz-atendimento">Tom de voz e discrição</a><a href="#disc">Perfis DISC</a><a href="#agenda">Agenda e pós-consulta</a><a href="#funil">Gestão do funil</a></nav></header>
+    <header class="tab-head"><span class="tab-num">Parte 06 de 07</span><h1>Comercial</h1><p>Manual de atendimento pra quem atende os leads: do primeiro contato à consulta particular de Peyronie e de UroFill.</p><nav class="tab-toc"><a href="#atendimento-fluxo">O fluxo de atendimento</a><a href="#qualificacao">Qualificação</a><a href="#roteiro-whatsapp">Roteiro no WhatsApp</a><a href="#objecoes">Matriz de objeções</a><a href="#tom-voz-atendimento">Tom de voz e discrição</a><a href="#disc">Perfis DISC</a><a href="#agenda">Agenda e pós-consulta</a><a href="#funil">Gestão do funil</a></nav></header>
 
   <section id="atendimento-fluxo">
     <div class="sec-head"><span class="sec-num">6.1</span><h2>O fluxo de atendimento</h2></div>
     <div class="facts" style="margin-top:0;">
       <div class="fact"><div class="k">Pra quem</div><div class="v">Tatiana e quem atende os leads no WhatsApp</div></div>
-      <div class="fact"><div class="k">Objetivo</div><div class="v">Consulta particular de Peyronie e de Urofill</div></div>
+      <div class="fact"><div class="k">Objetivo</div><div class="v">Consulta particular de Peyronie e de UroFill</div></div>
       <div class="fact"><div class="k">Tom</div><div class="v">Discreto, acolhedor e técnico</div></div>
     </div>
     <p>Quem preenche o formulário está pensando no assunto naquele momento, muitas vezes depois de anos convivendo com ele em silêncio. Se a resposta demora, o interesse esfria ou a vergonha volta e ele desiste. A regra é <strong>velocidade e insistência, com discrição</strong>: responder rápido, não desistir do contato e nunca expor o paciente.</p>
@@ -1223,7 +1297,7 @@
     <div class="tbl-wrap"><table>
       <thead><tr><th>Pergunta do formulário</th><th>O que a resposta diz pra conversa</th></tr></thead>
       <tbody>
-        <tr><td class="name">P1 · Procedimento</td><td>Define a trilha: Peyronie ou Urofill. "Já fiz em outro lugar e quero corrigir" pede acolhimento redobrado. "Ainda não sei" pede que a investigação descubra a queixa.</td></tr>
+        <tr><td class="name">P1 · Procedimento</td><td>Define a trilha: Peyronie ou UroFill. "Já fiz em outro lugar e quero corrigir" pede acolhimento redobrado. "Ainda não sei" pede que a investigação descubra a queixa.</td></tr>
         <tr><td class="name">P2 · Consulta de R$ 600</td><td>O lead já viu o valor. "Sim, quero agendar" é sinal forte; "quero entender antes" pede a percepção de valor bem feita antes das datas.</td></tr>
         <tr><td class="name">P3 · Prazo</td><td>Define a prioridade. "O quanto antes (neste mês)" é o primeiro da fila.</td></tr>
       </tbody>
@@ -1261,8 +1335,8 @@
     </div>
     <div class="ladder">
       <div class="rung"><span class="n"></span><div><b>Abertura e pedido de autorização</b><span>"Oi, [Nome]! Aqui é a Tatiana, da equipe do Dr. Hilton Monteiro, urologista. Recebi o seu contato e vou cuidar do seu atendimento pessoalmente, com todo o sigilo. Posso te ligar rapidinho pra entender o seu caso? Se preferir, a gente segue só por mensagem."</span></div></div>
-      <div class="rung"><span class="n"></span><div><b>Investigação (o paciente fala)</b><span>Urofill: "Me conta: o que te fez procurar agora? Há quanto tempo isso te incomoda?" · Peyronie: "Há quanto tempo você percebeu? Hoje isso atrapalha a relação ou causa dor?" · Quer corrigir outro procedimento: "Sinto muito que não tenha saído como você esperava. O Dr. Hilton recebe muitos casos assim." Depois, acolher: "Você fez bem em procurar."</span></div></div>
-      <div class="rung"><span class="n"></span><div><b>Percepção de valor (o diferencial)</b><span>Urofill: "Aqui não é um preenchimento qualquer. O Dr. Hilton é urologista e o único médico certificado na técnica UroFill® no Distrito Federal. Três etapas: avaliação individual e sigilosa, planejamento proporcional à sua anatomia e acompanhamento do pré ao pós." · Peyronie: "Ele trata com uma técnica com enxerto de pericárdio, que corrige a curvatura buscando preservar a ereção natural. Três etapas: avaliação completa com Doppler quando indicado, planejamento individual e acompanhamento do pré ao pós-operatório."</span></div></div>
+      <div class="rung"><span class="n"></span><div><b>Investigação (o paciente fala)</b><span>UroFill: "Me conta: o que te fez procurar agora? Há quanto tempo isso te incomoda?" · Peyronie: "Há quanto tempo você percebeu? Hoje isso atrapalha a relação ou causa dor?" · Quer corrigir outro procedimento: "Sinto muito que não tenha saído como você esperava. O Dr. Hilton recebe muitos casos assim." Depois, acolher: "Você fez bem em procurar."</span></div></div>
+      <div class="rung"><span class="n"></span><div><b>Percepção de valor (o diferencial)</b><span>UroFill: "Aqui não é um preenchimento qualquer. O Dr. Hilton é urologista e o único médico certificado na técnica UroFill® no Distrito Federal. Três etapas: avaliação individual e sigilosa, planejamento proporcional à sua anatomia e acompanhamento do pré ao pós." · Peyronie: "Ele trata com uma técnica com enxerto de pericárdio, que corrige a curvatura buscando preservar a ereção natural. Três etapas: avaliação completa com Doppler quando indicado, planejamento individual e acompanhamento do pré ao pós-operatório."</span></div></div>
       <div class="rung"><span class="n"></span><div><b>Isolamento da objeção</b><span>"[Nome], se na consulta o Dr. Hilton confirmar que [o UroFill® / a correção] é indicado pro seu caso, deixando o valor de lado por um instante, você quer seguir?" Se sim, o valor vira conversa da consulta. Se hesitar, ir pra Matriz de objeções.</span></div></div>
       <div class="rung"><span class="n"></span><div><b>Consulta, datas e confirmação</b><span>"Como te expliquei, a consulta não é uma conversa rápida: o Dr. Hilton examina com calma e monta o seu planejamento. O valor da consulta é R$ 600. Consegui separar estes horários: 📅 [dia], [data] às [horário] · 📅 [dia], [data] às [horário]. Qual fica melhor?" Depois: dados, localização (Centro Clínico Advance, SGAS 915, Asa Sul, sala 137, Torre B) e confirmação por escrito.</span></div></div>
     </div>
@@ -1282,9 +1356,9 @@
     <div class="sec-head"><span class="sec-num">6.4</span><h2>Matriz de objeções</h2></div>
     <p class="sec-desc">Objeção não é recusa, é pedido de mais informação. Neste tema, quase toda objeção é vergonha, medo ou dinheiro.</p>
     <div class="objections">
-      <div class="card"><h3>"Quanto custa o procedimento?"</h3><p>"O valor depende do que o Dr. Hilton avaliar no seu caso, por isso a consulta vem antes. Na consulta você já sai com o planejamento e o valor certinho."</p><p class="note">Se insistir: Urofill, citar a média combinada com o Dr. Hilton e que existem opções com valores diferentes. Peyronie: honorários na consulta; a parte hospitalar pode ser coberta pelo plano.</p></div>
-      <div class="card"><h3>"Está caro."</h3><p>"Entendo, é um investimento. Mas me diz uma coisa: quanto te custa passar mais um ano convivendo com isso?"</p><p class="note">Depois: Urofill tem outras opções de ácido hialurônico; no Peyronie, o plano pode cobrir o hospital.</p></div>
-      <div class="card"><h3>"Meu plano cobre?"</h3><p>Urofill: "É um procedimento estético, sem cobertura de plano. A consulta é R$ 600." Peyronie: "A consulta é particular. Se houver indicação de cirurgia, o plano pode cobrir a parte hospitalar, e os honorários são particulares."</p></div>
+      <div class="card"><h3>"Quanto custa o procedimento?"</h3><p>"O valor depende do que o Dr. Hilton avaliar no seu caso, por isso a consulta vem antes. Na consulta você já sai com o planejamento e o valor certinho."</p><p class="note">Se insistir: UroFill, citar a média combinada com o Dr. Hilton e que existem opções com valores diferentes. Peyronie: honorários na consulta; a parte hospitalar pode ser coberta pelo plano.</p></div>
+      <div class="card"><h3>"Está caro."</h3><p>"Entendo, é um investimento. Mas me diz uma coisa: quanto te custa passar mais um ano convivendo com isso?"</p><p class="note">Depois: UroFill tem outras opções de ácido hialurônico; no Peyronie, o plano pode cobrir o hospital.</p></div>
+      <div class="card"><h3>"Meu plano cobre?"</h3><p>UroFill: "É um procedimento estético, sem cobertura de plano. A consulta é R$ 600." Peyronie: "A consulta é particular. Se houver indicação de cirurgia, o plano pode cobrir a parte hospitalar, e os honorários são particulares."</p></div>
       <div class="card"><h3>"Vou ficar impotente?"</h3><p>"Essa é a dúvida mais comum, e é normal ter esse receio. A técnica que o Dr. Hilton usa prioriza a preservação da ereção natural, e ele só indica a cirurgia depois de examinar e explicar tudo com calma."</p></div>
       <div class="card"><h3>"É seguro? Quanto dura?"</h3><p>"É um procedimento médico, feito pelo próprio Dr. Hilton, que é urologista, depois de uma avaliação individual. Ele te explica na consulta a técnica, os cuidados e o que esperar no seu caso."</p></div>
       <div class="card"><h3>"Vi mais barato."</h3><p>"Faz sentido comparar. Só vale conferir quem faz e com qual produto: procedimento em região íntima é ato médico. E na consulta o Dr. Hilton também apresenta opções com valores diferentes."</p><p class="note">Nunca falar mal de outro profissional.</p></div>
@@ -1323,7 +1397,7 @@
         <tr><td class="name">D · Dominante</td><td>Direto, impaciente. Quer saber "o que é", "quanto" e "quando".</td><td>Direto ao ponto: o que é a consulta, o valor (R$ 600) e dois horários.</td></tr>
         <tr><td class="name">I · Influente</td><td>Comunicativo, conta a história toda, manda áudio.</td><td>Deixar falar. Contar como outros pacientes se sentiram (sem nome e sem prometer resultado). Depois puxar pras datas.</td></tr>
         <tr><td class="name">S · Estável</td><td>Calmo e educado, com medo de decidir errado. Muito comum no Peyronie.</td><td>Segurança: o passo a passo da consulta ao pós. Sem escassez e sem pressa.</td></tr>
-        <tr><td class="name">C · Conforme</td><td>Analítico e cético, pergunta sobre técnica, produto e segurança. Muito comum no Urofill.</td><td>Mais lógica: formação, certificação UroFill®, os 3 pilares e por que o orçamento sai na consulta.</td></tr>
+        <tr><td class="name">C · Conforme</td><td>Analítico e cético, pergunta sobre técnica, produto e segurança. Muito comum no UroFill.</td><td>Mais lógica: formação, certificação UroFill®, os 3 pilares e por que o orçamento sai na consulta.</td></tr>
       </tbody>
     </table></div>
   </section>
@@ -1373,11 +1447,11 @@
     <nav class="pager"><a href="#tab-roteiros">← Roteiros</a><a href="#tab-jornada">Jornada →</a></nav>
   </div>
   <div class="tab" id="tab-jornada">
-    <header class="tab-head"><span class="tab-num">07</span><h1>Jornada</h1><p>O que acontece nos primeiros 90 dias e o que alinhamos na call de apresentação.</p></header>
+    <header class="tab-head"><span class="tab-num">Parte 07 de 07</span><h1>Jornada</h1><p>O que acontece nos primeiros 90 dias, quem faz o quê e o que alinhamos na call de apresentação.</p><nav class="tab-toc"><a href="#jornada">A jornada dos primeiros 90 dias</a><a href="#responsabilidades">Quem faz o quê</a><a href="#termos">Termos usados neste plano</a></nav></header>
 
   <section id="jornada">
     <div class="sec-head"><span class="sec-num">7.1</span><h2>A jornada dos primeiros 90 dias</h2></div>
-    <div class="statement"><p>O Dr. Hilton pode continuar disputando lead de urologia com uma campanha de "cirurgia de Peyronie" e outra de "aumente sua autoestima". Ou pode construir uma categoria própria: o andrologista que decide o tratamento certo pra cada anatomia, com técnica e sigilo.</p></div>
+    <div class="statement"><p>Você pode continuar disputando lead de urologia com uma campanha de "cirurgia de Peyronie" e outra de "aumente sua autoestima". Ou pode construir uma categoria própria: o andrologista que decide o tratamento certo pra cada anatomia, com técnica e sigilo.</p></div>
 
     <h3 class="sub-h">Três acordos da operação</h3>
     <div class="criteria is-3">
@@ -1388,28 +1462,72 @@
 
     <h3 class="sub-h">O que cada mês traz</h3>
     <div class="months">
-      <div class="card"><div class="k">Outubro</div><h3>Base de comparação</h3><p>Google do Peyronie no ar desde 01/10, Meta com Urofill e Peyronie educativo, CRM recebendo os leads e atendimento no novo roteiro. Primeiro lote de vídeos gravado. O foco é medir lead → consulta → procedimento.</p></div>
+      <div class="card"><div class="k">Outubro</div><h3>Base de comparação</h3><p>Google do Peyronie no ar desde 01/10, Meta com UroFill e Peyronie educativo, CRM recebendo os leads e atendimento no novo roteiro. Primeiro lote de vídeos gravado. O foco é medir lead → consulta → procedimento.</p></div>
       <div class="card"><div class="k">Novembro</div><h3>Otimização</h3><p>Com os dados de outubro, a verba vai pro que gera consulta, não só lead. Ajuste de público e criativos, perfil reestruturado e primeiros fechamentos rastreados.</p></div>
-      <div class="card"><div class="k">Dezembro em diante</div><h3>Consolidação e escala</h3><p>Página dedicada de Peyronie no Google, Urofill reforçado antes do verão, expansão do Peyronie pra Goiás e Entorno e, depois, disfunção erétil e saúde hormonal.</p></div>
+      <div class="card"><div class="k">Dezembro em diante</div><h3>Consolidação e escala</h3><p>Página de Peyronie ajustada pra decisão, UroFill reforçado antes do verão, expansão do Peyronie pra Goiás e Entorno e, depois, disfunção erétil e saúde hormonal.</p></div>
     </div>
 
     <div class="callout" style="margin-top:22px;">
       <span class="mark">→</span>
       <div>
         <p><strong>Prioridade antes de escalar:</strong> o consultório precisa fazer o atendimento parecer tão especializado quanto a medicina que está sendo vendida.</p>
-        <p>Peyronie → autoridade e alta intenção · Urofill → desejo, educação e segurança · Conteúdo → andrologia de alta complexidade · CRM → inteligência de receita · WhatsApp → experiência premium.</p>
+        <p>Peyronie → autoridade e alta intenção · UroFill → desejo, educação e segurança · Conteúdo → andrologia de alta complexidade · CRM → inteligência de receita · WhatsApp → experiência premium.</p>
       </div>
     </div>
 
     <h3 class="sub-h">O que alinhamos na call de apresentação</h3>
     <div class="ladder">
-      <div class="rung"><span class="n"></span><div><b>Ticket do Urofill</b><span>Confirmar o valor de referência pro atendimento: R$ 16 mil (17/08) ou média de R$ 7.500 (01/10).</span></div></div>
-      <div class="rung"><span class="n"></span><div><b>Respaldo do Urofill</b><span>Registro do produto, protocolo e termo de consentimento, antes de escalar a comunicação.</span></div></div>
+      <div class="rung"><span class="n"></span><div><b>Ticket do UroFill</b><span>Confirmar o valor de referência pro atendimento: R$ 16 mil (17/08) ou média de R$ 7.500 (01/10).</span></div></div>
+      <div class="rung"><span class="n"></span><div><b>Respaldo do UroFill</b><span>Registro do produto, protocolo e termo de consentimento, antes de escalar a comunicação.</span></div></div>
       <div class="rung"><span class="n"></span><div><b>Atendimento</b><span>Quem vai seguir o manual da aba Comercial e se a secretária dedicada ao WhatsApp será contratada.</span></div></div>
       <div class="rung"><span class="n"></span><div><b>Verba entre Google e Meta</b><span>Ponto de partida da divisão, revisto toda semana pelo custo por consulta.</span></div></div>
       <div class="rung"><span class="n"></span><div><b>Agenda de gravação</b><span>Uma manhã por mês pros 6 vídeos da aba Roteiros, e as avaliações da Doctoralia que podem ser usadas.</span></div></div>
       <div class="rung"><span class="n"></span><div><b>Perfil</b><span>Escolher uma das 3 bios e montar os destaques e os fixados da aba Estruturação do perfil.</span></div></div>
     </div>
+  </section>
+
+  <section id="responsabilidades">
+    <div class="sec-head"><span class="sec-num">7.2</span><h2>Quem faz o quê</h2></div>
+    <p class="sec-desc">Pra ninguém ficar esperando o outro: o que é da Elevare, o que é seu e o que é do atendimento.</p>
+    <div class="grid3">
+      <div class="card"><span class="kicker">Elevare</span><h3>Mídia, dados e criativos</h3><ul>
+        <li>Criar, gerir e otimizar as campanhas no Google e na Meta</li>
+        <li>Relatório toda segunda-feira, com os últimos 7 dias</li>
+        <li>Roteiros e edição dos vídeos em até 5 dias úteis</li>
+        <li>Carrosséis informativos</li>
+        <li>Ler o CRM e ajustar a verba pelo custo por consulta</li>
+        <li>Revisar o perfil depois dos ajustes</li>
+      </ul></div>
+      <div class="card"><span class="kicker">Dr. Hilton</span><h3>Autoridade e decisões</h3><ul>
+        <li>Gravar os 6 vídeos do mês (uma manhã)</li>
+        <li>Aprovar os criativos rápido</li>
+        <li>Manter acessos e saldo nas contas de anúncio</li>
+        <li>Reunião mensal com a Elevare</li>
+        <li>Confirmar o ticket e o respaldo do UroFill®</li>
+      </ul></div>
+      <div class="card"><span class="kicker">Atendimento</span><h3>Do lead à consulta</h3><ul>
+        <li>Responder em até 5 minutos</li>
+        <li>Seguir o roteiro da aba Comercial</li>
+        <li>Atualizar a etapa de cada lead no CRM</li>
+        <li>Passar os números da semana, por produto</li>
+        <li>Ajustar bio, destaques e fixados (aba Perfil)</li>
+      </ul></div>
+    </div>
+    <p class="note">A Elevare não produz o conteúdo orgânico do perfil: não há plano de social media contratado.</p>
+  </section>
+
+  <section id="termos">
+    <div class="sec-head"><span class="sec-num">7.3</span><h2>Termos usados neste plano</h2></div>
+    <dl class="glossary">
+      <div><dt>Lead</dt><dd>Pessoa que levantou a mão: preencheu o formulário ou mandou mensagem a partir de um anúncio.</dd></div>
+      <div><dt>CPL (custo por lead)</dt><dd>Quanto custou, em mídia, cada lead. Ajuda a ler a campanha, mas o que importa é quanto custa cada consulta e cada procedimento.</dd></div>
+      <div><dt>Formulário instantâneo</dt><dd>Formulário que abre dentro do Instagram ou do Facebook, já com nome e telefone preenchidos.</dd></div>
+      <div><dt>CRM</dt><dd>Onde cada lead fica registrado, com a etapa em que está: respondeu, agendou, compareceu, fechou.</dd></div>
+      <div><dt>MQL e SQL</dt><dd>MQL é o lead que chegou pelo marketing; SQL é o que passou pelo atendimento e agendou a consulta.</dd></div>
+      <div><dt>Remarketing</dt><dd>Anúncio mostrado de novo pra quem já viu um vídeo, visitou a página ou interagiu com o perfil.</dd></div>
+      <div><dt>Criativo</dt><dd>A peça do anúncio: o vídeo, a imagem ou o carrossel.</dd></div>
+      <div><dt>Fase de aprendizado</dt><dd>As primeiras semanas de uma campanha, em que a plataforma testa públicos e o custo oscila mais.</dd></div>
+    </dl>
   </section>
     <nav class="pager"><a href="#tab-comercial">← Comercial</a><span></span></nav>
   </div>
@@ -1439,6 +1557,13 @@
   window.addEventListener('hashchange', function(){ abrir(location.hash, true); });
   if(select) select.addEventListener('change', function(){ location.hash = select.value; });
   abrir(location.hash, true);
+  // rótulos das colunas em cada célula (no celular a tabela vira cartões)
+  Array.prototype.forEach.call(document.querySelectorAll('.tbl-wrap table'), function(t){
+    var hs = Array.prototype.map.call(t.querySelectorAll('thead th'), function(th){ return th.textContent.trim(); });
+    Array.prototype.forEach.call(t.querySelectorAll('tbody tr'), function(tr){
+      Array.prototype.forEach.call(tr.children, function(td, i){ if(hs[i]) td.setAttribute('data-label', hs[i]); });
+    });
+  });
 })();
 </script>
 </body>
