@@ -319,6 +319,19 @@
 
   .months{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);}
   @media (max-width:640px){.months{grid-template-columns:1fr;}}
+  .impl-head{display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 14px;margin:0 0 12px;}
+  .impl-head .k{font-family:"Montserrat",sans-serif;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);}
+  .impl-head b{font-family:"Montserrat",sans-serif;font-size:14px;color:var(--text);}
+  .journey{display:grid;grid-template-columns:repeat(5,1fr);gap:1px;background:var(--line);border:1px solid var(--line);}
+  .jstep{background:var(--surface);padding:16px 14px;}
+  .jstep .jn{font-family:"Tenor Sans",serif;font-size:22px;color:var(--accent);font-variant-numeric:tabular-nums;}
+  .jstep b{display:block;font-family:"Montserrat",sans-serif;font-size:13px;color:var(--text);margin:6px 0 4px;}
+  .jstep span{display:block;font-size:12.5px;color:var(--muted);}
+  .jstep.is-here{outline:2px solid var(--accent);outline-offset:-2px;}
+  .jstep.is-here .here{display:inline-block;margin-top:8px;font-family:"Montserrat",sans-serif;font-size:10.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);}
+  .impl-next{margin:10px 0 0;font-family:"Montserrat",sans-serif;font-size:13px;font-weight:600;color:var(--accent);}
+  @media (max-width:900px){.journey{grid-template-columns:repeat(3,1fr);}}
+  @media (max-width:640px){.journey{grid-template-columns:repeat(2,1fr);}}
   .months .card h3{text-transform:none;font-family:"Tenor Sans",Georgia,serif;font-weight:400;font-size:18px;letter-spacing:0;}
 
   /* nada de card/bloco partido no PDF */
@@ -1599,11 +1612,32 @@
   </div>
 
   <div class="tab" id="tab-jornada">
-    <header class="tab-head"><span class="tab-num">Parte 07 de 07</span><h1>Jornada</h1><p>O que acontece nos primeiros 90 dias depois que as campanhas entram no ar, quem faz o quê e o que fica pra alinhar na apresentação deste plano.</p><nav class="tab-toc"><a href="#jornada">A jornada dos primeiros 90 dias</a><a href="#responsabilidades">Quem faz o quê</a><a href="#termos">Termos usados neste plano</a></nav></header>
+    <header class="tab-head"><span class="tab-num">Parte 07 de 07</span><h1>Jornada</h1><p>Como funciona a implantação do plano, o que acontece nos primeiros 90 dias, quem faz o quê e o que fica pra alinhar na apresentação deste plano.</p><nav class="tab-toc"><a href="#jornada">A jornada dos primeiros 90 dias</a><a href="#responsabilidades">Quem faz o quê</a><a href="#termos">Termos usados neste plano</a></nav></header>
 
   <section id="jornada">
     <div class="sec-head"><span class="sec-num">7.1</span><h2>A jornada dos primeiros 90 dias</h2></div>
     <div class="statement"><p>Dá pra disputar lead de urologia com uma campanha de "cirurgia de Peyronie" e outra de "aumente sua autoestima". Ou dá pra construir uma categoria própria: o urologista que decide o tratamento certo pra cada anatomia, com técnica e sigilo.</p></div>
+
+    <h3 class="sub-h">Como funciona a implantação</h3>
+    <div class="impl-head"><span class="k">Mês 01</span><b>Implantação, estratégia e primeiras validações</b></div>
+    <div class="journey">
+      <div class="jstep"><div class="jn">01</div><b>Reunião comercial</b><span>Entender o negócio e o momento do consultório.</span></div>
+      <div class="jstep"><div class="jn">02</div><b>Formalização de contrato</b><span>Escopo e responsabilidades de cada lado.</span></div>
+      <div class="jstep"><div class="jn">03</div><b>Entrada e apresentação do squad e agendamento do onboarding</b><span>Quem cuida do projeto na Elevare.</span></div>
+      <div class="jstep"><div class="jn">04</div><b>Reunião de onboarding</b><span>Em 17/08: tudo o que está no Briefing.</span></div>
+      <div class="jstep is-here"><div class="jn">05</div><b>Apresentação do Plano Macro e implementação do projeto</b><span>Este documento.</span><em class="here">Você está aqui</em></div>
+      <div class="jstep"><div class="jn">06</div><b>Entrega dos vídeos</b><span>Você grava os roteiros da aba Roteiros; os 4 vídeos já gravados entram primeiro.</span></div>
+      <div class="jstep"><div class="jn">07</div><b>Edição dos vídeos entregues</b><span>Em até 5 dias úteis.</span></div>
+      <div class="jstep"><div class="jn">08</div><b>Aprovação dos criativos em vídeo</b><span>Aprovação rápida, pra não travar a criação.</span></div>
+      <div class="jstep"><div class="jn">09</div><b>Ativação de campanhas e publicação</b><span>O funil KLT no ar: distribuição, formulário e busca no Google.</span></div>
+      <div class="jstep"><div class="jn">10</div><b>Monitoramento inicial</b><span>A fase de aprendizado acompanhada de perto.</span></div>
+      <div class="jstep"><div class="jn">11</div><b>Assessoria comercial</b><span>Atendimento no roteiro da aba Comercial, com o CRM.</span></div>
+      <div class="jstep"><div class="jn">12</div><b>Primeiro relatório semanal</b><span>Toda segunda-feira, com os últimos 7 dias.</span></div>
+      <div class="jstep"><div class="jn">13</div><b>Otimização das campanhas</b><span>A verba vai pro que gera consulta.</span></div>
+      <div class="jstep"><div class="jn">14</div><b>Acompanhamento diário</b><span>Otimização diária, como combinado.</span></div>
+      <div class="jstep"><div class="jn">15</div><b>Validação de copy e público</b><span>O que fica e o que muda pro mês 2.</span></div>
+    </div>
+    <p class="impl-next">Próximas etapas → o que cada mês traz, logo abaixo.</p>
 
     <h3 class="sub-h">Três acordos da operação</h3>
     <div class="criteria is-3">
