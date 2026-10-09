@@ -212,6 +212,8 @@
   /* ---- stat strip (mercado) ---- */
   .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);margin-bottom:22px;}
   @media (max-width:640px){.stats{grid-template-columns:repeat(2,1fr);}}
+  .stats.is-2{grid-template-columns:repeat(2,1fr);}
+  @media (max-width:640px){.stats.is-2{grid-template-columns:1fr;}}
   .stat{background:var(--surface);padding:18px 16px;}
   .stat .num{font-family:"Tenor Sans",serif;font-size:27px;color:var(--accent);font-variant-numeric:tabular-nums;}
   .stat .lbl{font-size:12.5px;color:var(--muted);margin-top:4px;font-family:"Montserrat",sans-serif;}
@@ -495,8 +497,8 @@
     <div class="decisions">
       <div class="decision"><b>Atendimento antes de verba</b><span>Você mesmo apontou o atendimento como o gargalo: a abordagem comercial e o tempo de resposta. Mais verba sem um atendimento rápido e consultivo só aumenta o desperdício. Primeiro, o roteiro da aba Comercial e o CRM.</span></div>
       <div class="decision"><b>Dois procedimentos, com foco</b><span>Peyronie e UroFill®, validados separadamente. Disfunção erétil e reposição hormonal ficam pra depois: no histórico da sua conta, 30% da verba ia pra essas duas frentes.</span></div>
-      <div class="decision"><b>Qualificar antes de buscar volume</b><span>Formulário com 3 perguntas (procedimento, consulta particular de R$ 600 e prazo) no lugar da conversa direta no WhatsApp, que no histórico trouxe volume sem filtro.</span></div>
-      <div class="decision"><b>Medir consulta, não lead</b><span>Cada lead com a etapa registrada num CRM simples. A verba vai pro que gera consulta e procedimento, não pro contato mais barato.</span></div>
+      <div class="decision"><b>Funil KLT desde o primeiro dia</b><span>Conhecer, gostar e confiar rodando juntos: 80% da verba na conversão (formulário e Google) e 20% em vídeos que fazem o paciente te conhecer e gostar de você antes de chegar ao formulário.</span></div>
+      <div class="decision"><b>Qualificar e medir consulta, não lead</b><span>Formulário com 3 perguntas (procedimento, consulta particular de R$ 600 e prazo) no lugar da conversa sem filtro do histórico, e cada lead com a etapa registrada num CRM simples.</span></div>
       <div class="decision"><b>+2 procedimentos por mês até o 4º mês</b><span>Com ticket de cerca de R$ 16 mil, são cerca de R$ 32 mil por mês. Um único procedimento paga cerca de 5 meses de investimento.</span></div>
     </div>
 
@@ -504,7 +506,7 @@
     <div class="toc">
       <a href="#tab-briefing"><span>01</span><b>Briefing</b><em>Quem é o Dr. Hilton, o diagnóstico da conta, o mercado e o que alinhamos no onboarding.</em></a>
       <a href="#tab-persona"><span>02</span><b>Persona</b><em>Os dois pacientes: o homem com Peyronie e o homem que busca o UroFill®.</em></a>
-      <a href="#tab-trafego"><span>03</span><b>Estratégia de tráfego</b><em>Posicionamento, regras do CFM, Google e Meta, campanhas, formulário e projeção.</em></a>
+      <a href="#tab-trafego"><span>03</span><b>Estratégia de tráfego</b><em>Posicionamento, regras do CFM, Google e Meta, funil KLT, campanhas, formulário e projeção.</em></a>
       <a href="#tab-perfil"><span>04</span><b>Estruturação do perfil</b><em>Bio, destaques, fixados e linha editorial.</em></a>
       <a href="#tab-roteiros"><span>05</span><b>Roteiros</b><em>Os anúncios do nicho que estão há mais tempo no ar e os 6 roteiros de vídeo.</em></a>
       <a href="#tab-comercial"><span>06</span><b>Comercial</b><em>Manual de atendimento: do primeiro contato à consulta particular.</em></a>
@@ -805,7 +807,7 @@
   </div>
 
   <div class="tab" id="tab-trafego">
-    <header class="tab-head"><span class="tab-num">Parte 03 de 07</span><h1>Estratégia de tráfego</h1><p>Do posicionamento à projeção: as regras do CFM, onde anunciar, quais campanhas, como funciona o formulário e o que esperar.</p><nav class="tab-toc"><a href="#posicionamento">Posicionamento</a><a href="#regras-cfm">Regras do CFM</a><a href="#objetivos">Objetivos</a><a href="#estrategias">Estratégias</a><a href="#plataforma">Google e Meta</a><a href="#campanhas">Campanhas</a><a href="#formulario">Formulário</a><a href="#projecao">Projeção e criativos</a></nav></header>
+    <header class="tab-head"><span class="tab-num">Parte 03 de 07</span><h1>Estratégia de tráfego</h1><p>Do posicionamento à projeção: as regras do CFM, onde anunciar, o funil KLT, quais campanhas, como funciona o formulário e o que esperar.</p><nav class="tab-toc"><a href="#posicionamento">Posicionamento</a><a href="#regras-cfm">Regras do CFM</a><a href="#objetivos">Objetivos</a><a href="#estrategias">Estratégias</a><a href="#plataforma">Google e Meta</a><a href="#klt">Funil KLT</a><a href="#campanhas">Campanhas</a><a href="#formulario">Formulário</a><a href="#projecao">Projeção e criativos</a></nav></header>
 
   <section id="posicionamento">
     <div class="sec-head"><span class="sec-num">3.1</span><h2>Posicionamento e proposta de valor</h2></div>
@@ -894,7 +896,7 @@
     </div>
     <div class="strategy">
       <div class="strategy-head"><span class="tag">Estratégia 2</span><h3>Criar demanda com educação (UroFill®)</h3></div>
-      <p>O desejo existe, mas a pessoa não procura pelo nome. Na Meta, vender primeiro o critério médico, depois o procedimento.</p>
+      <p>O desejo existe, mas a pessoa não procura pelo nome. Na Meta, vender primeiro o critério médico, depois o procedimento: é o K e o L do funil KLT (seção 3.6).</p>
       <div class="grid2">
         <div class="card"><h3>Criativos de quebra de percepção</h3><p>"O erro é achar que preenchimento peniano é só escolher quantos ml colocar."</p></div>
         <div class="card"><h3>Comparação sem atacar ninguém</h3><p>Preço não é a única variável, produto também não, quantidade também não: entram anatomia, planejamento, aplicação e acompanhamento.</p></div>
@@ -930,23 +932,71 @@
 
   <section id="plataforma">
     <div class="sec-head"><span class="sec-num">3.5</span><h2>Google e Meta: o papel de cada um</h2></div>
-    <p class="sec-desc">As duas plataformas servem a momentos diferentes do paciente. O investimento total é de R$ 3 mil por mês, como alinhado no onboarding, e a divisão entre elas é revista toda semana pelo custo por consulta, não pelo custo por lead.</p>
+    <p class="sec-desc">As duas plataformas servem a momentos diferentes do paciente. O investimento total é de R$ 3 mil por mês, como alinhado no onboarding: cerca de 80% na conversão (busca no Google e formulário na Meta) e 20% na distribuição de vídeos na Meta (seção 3.6). A divisão entre Google e Meta é revista toda semana pelo custo por consulta, não pelo custo por lead.</p>
     <div class="grid2">
-      <div class="card platform is-now"><span class="tag">Google · busca</span><h3 style="margin-top:12px;">Captura quem já está procurando</h3><p>Quem digita "cirurgia de Peyronie", "pênis curvado tratamento" ou "preenchimento peniano" já sabe o que quer. Serve aos dois procedimentos, com prioridade pro Peyronie, que é um problema pesquisado em silêncio.</p></div>
-      <div class="card platform is-now"><span class="tag">Meta · Instagram e Facebook</span><h3 style="margin-top:12px;">Desperta e educa</h3><p>Alcança quem ainda não pesquisou, com você explicando em vídeo e carrossel. É onde o desejo do UroFill® ganha escala e onde o homem com Peyronie descobre que o que ele tem tem nome. Tem as restrições de saúde sexual da Meta e do CFM.</p></div>
+      <div class="card platform is-now"><span class="tag">Google · busca</span><h3 style="margin-top:12px;">Captura quem já está procurando</h3><p>Quem digita "cirurgia de Peyronie", "pênis curvado tratamento" ou "preenchimento peniano" já sabe o que quer. Serve aos dois procedimentos, com prioridade pro Peyronie, que é um problema pesquisado em silêncio. No funil KLT, é a etapa de confiança pra quem já pesquisa.</p></div>
+      <div class="card platform is-now"><span class="tag">Meta · Instagram e Facebook</span><h3 style="margin-top:12px;">Desperta, educa e converte</h3><p>Alcança quem ainda não pesquisou, com você explicando em vídeo e carrossel. É onde o desejo do UroFill® ganha escala e onde o homem com Peyronie descobre que o que ele tem tem nome. Na Meta rodam as três etapas do funil KLT. Tem as restrições de saúde sexual da Meta e do CFM.</p></div>
     </div>
     <div class="callout" style="margin-top:22px;">
       <span class="mark">→</span>
       <div>
-        <p><strong>Resumo:</strong> o Google captura a demanda que já existe; a Meta cria e educa.</p>
+        <p><strong>Resumo:</strong> o Google captura a demanda que já existe; a Meta cria, educa e converte.</p>
         <p>Referência do histórico: a agência anterior dividia cerca de R$ 2 mil no Google e R$ 1 mil na Meta. A divisão da Elevare parte do diagnóstico da conta e segue o custo por consulta de cada produto.</p>
       </div>
     </div>
   </section>
 
+  <section id="klt">
+    <div class="sec-head"><span class="sec-num">3.6</span><h2>O funil KLT: conhecer, gostar e confiar</h2></div>
+    <p class="sec-desc">KLT vem de <em>Know, Like, Trust</em>: conhecer, gostar e confiar. É o caminho que o paciente percorre até agendar. Primeiro ele precisa saber que você existe e que o problema dele tem nome. Depois, se identificar com o jeito que você explica e trata. Por fim, sentir segurança pra dar o passo. Como você contou no onboarding, o homem reluta muito e chega à internet perdido, cercado de tratamento que não funciona: anunciar só a consulta é pedir o contato de quem ainda não confia.</p>
+    <div class="grid3">
+      <div class="card">
+        <span class="tag">K · Conhecer</span>
+        <h3 style="margin-top:10px;">Saber que você existe e que o problema tem nome</h3>
+        <p><strong>Pra quem:</strong> quem ainda não te conhece. O homem que acha que a curvatura é coisa da idade, ou que nunca pensou em fazer o preenchimento com um médico.</p>
+        <p><strong>O que roda:</strong> campanha de distribuição na Meta (visualização de vídeo), com público aberto nas regiões do onboarding: Peyronie a partir de 45 anos e UroFill® de 30 a 60.</p>
+        <p><strong>Conteúdo:</strong> vídeos de até 1 minuto, de consciência e de diferencial: os sinais do Peyronie (R1), "preenchimento não é só ml" (R2), a técnica com enxerto de pericárdio bovino e a certificação na técnica UroFill®.</p>
+        <p class="card-foot">Como medimos: custo por vídeo assistido e quantas pessoas assistem à maior parte do vídeo.</p>
+      </div>
+      <div class="card">
+        <span class="tag">L · Gostar</span>
+        <h3 style="margin-top:10px;">Se identificar e tirar as dúvidas</h3>
+        <p><strong>Pra quem:</strong> quem já assistiu aos vídeos do K ou interagiu com o perfil. Ele já sabe quem você é e quer entender se é pra ele.</p>
+        <p><strong>O que roda:</strong> a mesma campanha de distribuição, num conjunto só com esse público.</p>
+        <p><strong>Conteúdo:</strong> educação e quebra de desinformação: o caso narrado (R3), o que o preenchimento faz e o que não faz (R4), o Doppler explicado, o plano que cobre a internação e a anestesia no Peyronie e o parcelamento em até 10x. Aqui o vídeo pode ser mais longo, porque quem chega quer entender.</p>
+        <p class="card-foot">Como medimos: comentários, salvamentos, compartilhamentos, visitas ao perfil e mensagens.</p>
+      </div>
+      <div class="card">
+        <span class="tag">T · Confiar</span>
+        <h3 style="margin-top:10px;">Sentir segurança pra agendar</h3>
+        <p><strong>Pra quem:</strong> quem já conhece e gosta, e quem já pesquisa no Google. Falta a prova e um caminho claro até a consulta.</p>
+        <p><strong>O que roda:</strong> as campanhas de conversão da seção 3.7: o formulário de UroFill® (A) e o de Peyronie (C) na Meta, com o público quente dos últimos 30 dias, e a busca no Google (B).</p>
+        <p><strong>Conteúdo:</strong> prova permitida pelo CFM: depoimentos sóbrios (R5 e R6), as 214 opiniões, a formação e a certificação, como funciona a consulta, os R$ 600 e o parcelamento. Chamada direta: "agende sua avaliação".</p>
+        <p class="card-foot">Como medimos: custo por consulta agendada e por procedimento.</p>
+      </div>
+    </div>
+
+    <h3 class="sub-h">Como a verba se divide</h3>
+    <div class="stats is-2">
+      <div class="stat"><div class="num">80%</div><div class="lbl">no T, a conversão (cerca de R$ 2.400 por mês), divididos entre o formulário na Meta e a busca no Google pelo custo por consulta</div></div>
+      <div class="stat"><div class="num">20%</div><div class="lbl">no K e no L, a distribuição na Meta (cerca de R$ 600 por mês), pra você ser conhecido e lembrado por quem ainda não está pronto</div></div>
+    </div>
+
+    <h3 class="sub-h">Como o paciente anda no funil</h3>
+    <div class="funnel"><span class="step">Assiste a um vídeo (K)</span><span class="step">Volta e interage (L)</span><span class="step">Entra no público quente (T)</span><span class="step">Preenche o formulário</span><span class="step">Consulta</span></div>
+
+    <div class="callout" style="margin-top:22px;">
+      <span class="mark">→</span>
+      <div>
+        <p><strong>As três etapas rodam juntas desde o primeiro dia.</strong> Enquanto o T converte quem já está pronto, o K e o L preparam os próximos. Sem eles, o T depende só de quem já decidiu, que nesse tema é pouca gente.</p>
+        <p>Os 6 roteiros da aba Roteiros cobrem o funil: R1 e R2 no K, R3 e R4 no L, R5 e R6 no T. Em todas as etapas valem as regras do CFM (seção 3.2): o diferencial aparece como qualificação, nunca como "único".</p>
+      </div>
+    </div>
+  </section>
+
   <section id="campanhas">
-    <div class="sec-head"><span class="sec-num">3.6</span><h2>As campanhas</h2></div>
-    <p class="sec-desc">Mesma autoridade, dois procedimentos que se comportam de forma diferente no tráfego pago: o UroFill® gera mais volume, o Peyronie tem menos volume e ciclo mais longo. São três campanhas, mais o público quente em todas.</p>
+    <div class="sec-head"><span class="sec-num">3.7</span><h2>As campanhas</h2></div>
+    <p class="sec-desc">Mesma autoridade, dois procedimentos que se comportam de forma diferente no tráfego pago: o UroFill® gera mais volume, o Peyronie tem menos volume e ciclo mais longo. São três campanhas de conversão (o T do funil KLT), alimentadas pela distribuição do K e do L, com o público quente em todas as da Meta.</p>
     <h3 class="sub-h">Como escolhemos</h3>
     <div class="criteria">
       <div class="card"><span class="crit-n">01</span><h3>Onde a autoridade vira vantagem</h3><p>Certificação UroFill®, enxerto de pericárdio e Doppler precisam ser argumento direto na conversão, dentro das regras do CFM.</p></div>
@@ -956,7 +1006,7 @@
     </div>
 
     <div class="rota">
-      <div class="rota-head"><span class="rota-letter">A</span><div><h3>UroFill® pra homens que querem mais espessura com segurança</h3><p>A frente com o contato mais barato e o maior volume no histórico da conta.</p></div><span class="tag is-ghost rota-plat">Meta Ads</span></div>
+      <div class="rota-head"><span class="rota-letter">A</span><div><h3>UroFill® pra homens que querem mais espessura com segurança</h3><p>A frente com o contato mais barato e o maior volume no histórico da conta.</p></div><span class="tag is-ghost rota-plat">Meta Ads · T</span></div>
       <div class="rota-metrics">
         <div><div class="k">Público</div><div class="v">Homens de 30 a 60 anos, regiões prioritárias</div></div>
         <div><div class="k">Objetivo</div><div class="v">Leads de formulário (3 perguntas)</div></div>
@@ -975,7 +1025,7 @@
     </div>
 
     <div class="rota">
-      <div class="rota-head"><span class="rota-letter">B</span><div><h3>Busca no Google: Peyronie e UroFill®</h3><p>Captura de alta intenção, onde o paciente já está decidindo. Prioridade pro Peyronie.</p></div><span class="tag is-ghost rota-plat">Google Ads</span></div>
+      <div class="rota-head"><span class="rota-letter">B</span><div><h3>Busca no Google: Peyronie e UroFill®</h3><p>Captura de alta intenção, onde o paciente já está decidindo. Prioridade pro Peyronie.</p></div><span class="tag is-ghost rota-plat">Google Ads · T</span></div>
       <div class="rota-metrics">
         <div><div class="k">Público</div><div class="v">Quem pesquisa Peyronie, curvatura e preenchimento peniano</div></div>
         <div><div class="k">Objetivo</div><div class="v">Contato pelas páginas de Peyronie e UroFill®</div></div>
@@ -993,7 +1043,7 @@
     </div>
 
     <div class="rota">
-      <div class="rota-head"><span class="rota-letter">C</span><div><h3>Peyronie na Meta, pra quem ainda não sabe o nome do que tem</h3><p>Conteúdo que transforma "acho que é da idade" em "isso tem nome e tratamento".</p></div><span class="tag is-ghost rota-plat">Meta Ads</span></div>
+      <div class="rota-head"><span class="rota-letter">C</span><div><h3>Peyronie na Meta, pra quem já se reconheceu</h3><p>O K e o L mostram que a curvatura tem nome e tratamento; esta campanha leva quem se reconheceu até a consulta.</p></div><span class="tag is-ghost rota-plat">Meta Ads · T</span></div>
       <div class="rota-metrics">
         <div><div class="k">Público</div><div class="v">Homens a partir de 45 anos (obrigatório a partir dos 50), classe A/B</div></div>
         <div><div class="k">Objetivo</div><div class="v">Leads de formulário (3 perguntas)</div></div>
@@ -1002,33 +1052,35 @@
         <div><div class="k">Ciclo até fechar</div><div class="v">Longo</div></div>
       </div>
       <h4>A tese, em uma frase</h4>
-      <p>O homem com Peyronie demora meses ou anos pra procurar ajuda; o vídeo educativo encurta esse caminho e prepara quem depois vai pesquisar no Google.</p>
+      <p>O homem com Peyronie demora a procurar ajuda; quem já viu os vídeos e se reconheceu precisa de um caminho seguro até a consulta: formulário curto, consulta particular e o plano cobrindo a internação e a anestesia.</p>
       <h4>O papel dela</h4>
-      <p>Educa e alimenta o público quente. Não é avaliada pelo custo por lead, e sim por quantas consultas de Peyronie vêm dela.</p>
+      <p>Converte o Peyronie na Meta, com o público quente que o K e o L formam. Não é avaliada pelo custo por lead, e sim por quantas consultas de Peyronie vêm dela.</p>
     </div>
 
     <div class="card" style="border:1px solid var(--line);margin-bottom:16px;">
       <span class="kicker">Em todas as campanhas da Meta</span>
       <h3>Público quente (remarketing)</h3>
-      <p>Um conjunto com quem interagiu com o perfil ou com os anúncios nos últimos 30 dias. Essa pessoa já te conhece, e é a mais perto de agendar.</p>
+      <p>Um conjunto com quem interagiu com o perfil ou com os anúncios nos últimos 30 dias, incluindo quem assistiu aos vídeos do K e do L. É onde o funil KLT desemboca: essa pessoa já te conhece, e é a mais perto de agendar.</p>
     </div>
 
     <h3 class="sub-h">Lado a lado</h3>
     <div class="tbl-wrap"><table>
-      <thead><tr><th></th><th>A · UroFill®</th><th>B · Busca no Google</th><th>C · Peyronie na Meta</th></tr></thead>
+      <thead><tr><th></th><th>A · UroFill®</th><th>B · Busca no Google</th><th>C · Peyronie na Meta</th><th>Distribuição</th></tr></thead>
       <tbody>
-        <tr><td class="name">Plataforma</td><td>Meta</td><td>Google</td><td>Meta</td></tr>
-        <tr><td class="name">Natureza</td><td>Desejo estético</td><td>Problema pesquisado</td><td>Problema escondido</td></tr>
-        <tr><td class="name">Referência do histórico</td><td>R$ 7,85 por conversa</td><td>Ainda não auditado</td><td>R$ 15,19 por conversa</td></tr>
-        <tr><td class="name">Volume</td><td>O maior do histórico</td><td>A medir</td><td>Menor que o UroFill® no histórico</td></tr>
-        <tr><td class="name">Papel</td><td>Volume e medição</td><td>Receita</td><td>Educação e público quente</td></tr>
+        <tr><td class="name">Etapa do KLT</td><td>T · Confiar</td><td>T · Confiar</td><td>T · Confiar</td><td>K · Conhecer e L · Gostar</td></tr>
+        <tr><td class="name">Plataforma</td><td>Meta</td><td>Google</td><td>Meta</td><td>Meta</td></tr>
+        <tr><td class="name">Natureza</td><td>Desejo estético</td><td>Problema pesquisado</td><td>Problema escondido</td><td>Apresentar e educar</td></tr>
+        <tr><td class="name">Referência do histórico</td><td>R$ 7,85 por conversa</td><td>Ainda não auditado</td><td>R$ 15,19 por conversa</td><td>Sem histórico comparável</td></tr>
+        <tr><td class="name">Volume</td><td>O maior do histórico</td><td>A medir</td><td>Menor que o UroFill® no histórico</td><td>Alcance, sem pedir contato</td></tr>
+        <tr><td class="name">Verba</td><td>Parte dos 80%</td><td>Parte dos 80%</td><td>Parte dos 80%</td><td>Cerca de 20%</td></tr>
+        <tr><td class="name">Papel</td><td>Volume e medição</td><td>Receita</td><td>Conversão do Peyronie</td><td>Formar o público quente</td></tr>
       </tbody>
     </table></div>
-    <div class="statement is-accent" style="margin-top:22px;"><p>UroFill® como motor de volume na Meta, a busca do Google como motor de receita e o Peyronie educativo na Meta, com o público quente em todas e a divisão revista toda semana.</p><div class="statement-foot">O vencedor não é o lead mais barato: é a combinação de custo por lead, qualidade da conversa, consulta agendada e procedimento fechado.</div></div>
+    <div class="statement is-accent" style="margin-top:22px;"><p>UroFill® como motor de volume na Meta, a busca do Google como motor de receita e o Peyronie convertendo na Meta, todos alimentados pelo K e pelo L, com o público quente em todas e a divisão revista toda semana.</p><div class="statement-foot">O vencedor não é o lead mais barato: é a combinação de custo por lead, qualidade da conversa, consulta agendada e procedimento fechado.</div></div>
   </section>
 
   <section id="formulario">
-    <div class="sec-head"><span class="sec-num">3.7</span><h2>Como funciona a campanha de formulário</h2></div>
+    <div class="sec-head"><span class="sec-num">3.8</span><h2>Como funciona a campanha de formulário</h2></div>
     <p class="sec-desc">Pra não ter surpresa depois: o caminho do lead, do anúncio até o atendimento, e o que cada lado faz.</p>
     <div class="ladder">
       <div class="rung"><span class="n"></span><div><span class="who">Paciente</span><b>Vê o anúncio e responde 3 perguntas</b><span>O formulário abre dentro do Instagram/Facebook, com nome e telefone preenchidos. As 3 perguntas filtram quem está pronto e já entregam o contexto pra quem vai atender. No fim, um botão de WhatsApp de atendimento prioritário.</span></div></div>
@@ -1050,7 +1102,7 @@
   </section>
 
   <section id="projecao">
-    <div class="sec-head"><span class="sec-num">3.8</span><h2>Projeção e criativos</h2></div>
+    <div class="sec-head"><span class="sec-num">3.9</span><h2>Projeção e criativos</h2></div>
     <p class="sec-desc">A projeção parte do que a sua conta já mostrou e do que precisa acontecer pra meta fechar. O número de leads é calibrado no primeiro mês, com o formulário rodando.</p>
     <div class="proj">
       <div class="proj-col">
@@ -1064,21 +1116,22 @@
       <div class="proj-col">
         <div class="k">Com R$ 3 mil/mês</div>
         <div class="proj-row"><span>Investimento</span><b>R$ 3 mil (onboarding)</b></div>
-        <div class="proj-row"><span>Teto pelo custo do histórico</span><b>≈ 200 a 380 contatos/mês</b></div>
+        <div class="proj-row"><span>Conversão (T) · distribuição (K e L)</span><b>≈ R$ 2.400 · R$ 600</b></div>
+        <div class="proj-row"><span>Teto pelo custo do histórico</span><b>≈ 160 a 300 contatos/mês</b></div>
         <div class="proj-row"><span>Ponto de equilíbrio</span><b>1 procedimento ≈ 5 meses</b></div>
         <div class="proj-row is-total"><span>Meta do 4º mês</span><b>+2 procedimentos ≈ R$ 32 mil</b></div>
       </div>
     </div>
-    <p class="note">De onde vêm os números: conta de anúncios da Meta, de 01/02 a 24/08/2026, antes da Elevare. O teto vai de 200 (se toda a verba fosse pro Peyronie) a 380 contatos (se fosse toda pro UroFill®), no custo por conversa do histórico. O formulário filtra, então os leads tendem a ser menos numerosos e mais qualificados. A taxa de conversão real sai do CRM no primeiro mês.</p>
+    <p class="note">De onde vêm os números: conta de anúncios da Meta, de 01/02 a 24/08/2026, antes da Elevare. O teto considera os 80% da verba que vão pra conversão (cerca de R$ 2.400): vai de 160 contatos (se tudo fosse pro Peyronie, a R$ 15,19) a 300 (se fosse tudo pro UroFill®, a R$ 7,85), no custo por conversa do histórico. O formulário filtra, então os leads tendem a ser menos numerosos e mais qualificados. A taxa de conversão real sai do CRM no primeiro mês.</p>
 
     <h3 class="sub-h">Quantos criativos por mês, e de que tipo</h3>
     <div class="grid2">
-      <div class="card"><span class="tag is-ghost">Formato 1 · principal</span><h3 style="margin-top:10px;">Vídeo com você explicando</h3><p>Fala pra câmera, de 30 a 60 segundos, com tom médico e explicativo. Os 4 vídeos já gravados entram primeiro.</p><p class="card-foot">6 por mês · os roteiros da aba Roteiros</p></div>
-      <div class="card"><span class="tag is-ghost">Formato 2 · apoio</span><h3 style="margin-top:10px;">Carrossel informativo</h3><p>Educação sobre Peyronie e sobre o que avaliar antes de um preenchimento, dentro das regras do CFM: sem promessa e sem imagem de duplo sentido.</p><p class="card-foot">2 a 4 por mês</p></div>
+      <div class="card"><span class="tag is-ghost">Formato 1 · principal</span><h3 style="margin-top:10px;">Vídeo com você explicando</h3><p>Fala pra câmera, com tom médico e explicativo: até 1 minuto no K; no L pode ser mais longo. Os 4 vídeos já gravados entram primeiro.</p><p class="card-foot">6 por mês · 2 por etapa do funil KLT</p></div>
+      <div class="card"><span class="tag is-ghost">Formato 2 · apoio</span><h3 style="margin-top:10px;">Carrossel informativo</h3><p>Educação sobre Peyronie e sobre o que avaliar antes de um preenchimento (L), e prova permitida, como formação, certificação e como funciona a consulta (T). Dentro das regras do CFM: sem promessa e sem imagem de duplo sentido.</p><p class="card-foot">2 a 4 por mês</p></div>
     </div>
     <div class="card" style="border:1px solid var(--line);border-top:none;">
       <h3>A lógica do número</h3>
-      <p>Cada campanha da Meta precisa de 2 a 3 variações de vídeo pra testar ângulos, e criativo de tráfego perde força depois de algumas semanas no ar. Seis vídeos por mês mantêm UroFill® e Peyronie com criativo novo. Gravando em lote, os seis cabem numa mesma sessão; a Elevare envia os roteiros e edita em até 5 dias úteis.</p>
+      <p>Cada etapa do funil recebe 2 vídeos novos por mês, e cada campanha da Meta precisa de 2 a 3 variações pra testar ângulos; criativo de tráfego perde força depois de algumas semanas no ar. Seis vídeos por mês mantêm o K, o L e o T com criativo novo. Gravando em lote, os seis cabem numa mesma sessão; a Elevare envia os roteiros e edita em até 5 dias úteis.</p>
     </div>
   </section>
     <nav class="pager"><a href="#tab-persona">← Persona</a><a href="#tab-perfil">Estruturação do perfil →</a></nav>
@@ -1180,7 +1233,7 @@
   </div>
 
   <div class="tab" id="tab-roteiros">
-    <header class="tab-head"><span class="tab-num">Parte 05 de 07</span><h1>Roteiros</h1><p>Os anúncios do nicho que estão há mais tempo no ar e os 6 roteiros de vídeo, todos dentro das regras do CFM.</p><nav class="tab-toc"><a href="#referencias">Referências da Biblioteca de Anúncios</a><a href="#roteiros-video">Os 6 roteiros</a></nav></header>
+    <header class="tab-head"><span class="tab-num">Parte 05 de 07</span><h1>Roteiros</h1><p>Os anúncios do nicho que estão há mais tempo no ar e os 6 roteiros de vídeo, dois pra cada etapa do funil KLT, todos dentro das regras do CFM.</p><nav class="tab-toc"><a href="#referencias">Referências da Biblioteca de Anúncios</a><a href="#roteiros-video">Os 6 roteiros</a></nav></header>
 
   <section id="referencias">
     <div class="sec-head"><span class="sec-num">5.1</span><h2>Referências da Biblioteca de Anúncios</h2></div>
@@ -1210,7 +1263,7 @@
 
   <section id="roteiros-video">
     <div class="sec-head"><span class="sec-num">5.2</span><h2>Os 6 roteiros</h2></div>
-    <p class="sec-desc">Dois inspirados nos anúncios que estão há mais tempo no ar, dois de antes e depois e dois de depoimento. O roteiro é um ponto de partida: grave do seu jeito, mantendo a estrutura. Em todos, a identificação exigida pelo CFM aparece na tela, nenhum promete resultado e termos explícitos ganham o sinal sonoro, como você já faz.</p>
+    <p class="sec-desc">Dois inspirados nos anúncios que estão há mais tempo no ar (K, conhecer), dois de antes e depois (L, gostar) e dois de depoimento (T, confiar). O roteiro é um ponto de partida: grave do seu jeito, mantendo a estrutura. Em todos, a identificação exigida pelo CFM aparece na tela, nenhum promete resultado e termos explícitos ganham o sinal sonoro, como você já faz.</p>
 
     <div class="roteiro">
       <div class="roteiro-head"><span class="rot-n">R1</span><div><span class="tag is-ghost">Biblioteca · Peyronie</span><h3>"Começou a entortar de uns tempos pra cá?"</h3></div></div>
@@ -1218,7 +1271,7 @@
         <div><div class="k">Formato</div><div class="v">Reels 9:16, fala pra câmera</div></div>
         <div><div class="k">Duração</div><div class="v">40 a 50 s</div></div>
         <div><div class="k">Quem grava</div><div class="v">Dr. Hilton</div></div>
-        <div><div class="k">Campanha</div><div class="v">C · Peyronie na Meta</div></div>
+        <div><div class="k">Etapa e campanha</div><div class="v">K · Distribuição (Peyronie)</div></div>
       </div>
       <p class="note" style="margin:0 0 12px;"><strong>Referência:</strong> Dr. João Guilherme Carvalhal, no ar desde 22/01/2026 · <a href="https://www.facebook.com/ads/library/?id=1827980091240781" target="_blank" rel="noopener">ver anúncio</a>. O que aproveitamos: a pergunta direta no gancho, o "calma, nem toda curvatura é problema" e a lista de sinais de alerta antes do nome da doença.</p>
       <div class="tbl-wrap"><table class="script">
@@ -1240,7 +1293,7 @@
         <div><div class="k">Formato</div><div class="v">Reels 9:16, fala pra câmera com objeto</div></div>
         <div><div class="k">Duração</div><div class="v">30 a 40 s</div></div>
         <div><div class="k">Quem grava</div><div class="v">Dr. Hilton</div></div>
-        <div><div class="k">Campanha</div><div class="v">A · UroFill®</div></div>
+        <div><div class="k">Etapa e campanha</div><div class="v">K · Distribuição (UroFill®)</div></div>
       </div>
       <p class="note" style="margin:0 0 12px;"><strong>Referência:</strong> Dr. Bruno Urologista, no ar desde 19/01/2026 · <a href="https://www.facebook.com/ads/library/?id=4452456294982134" target="_blank" rel="noopener">ver anúncio</a>. O que aproveitamos: o objeto na mão que quebra uma crença no gancho e a virada "o que importa de verdade é...". Ficam de fora as promessas de desempenho: pelas regras do CFM, os seus anúncios não falam de resultado.</p>
       <div class="tbl-wrap"><table class="script">
@@ -1262,7 +1315,7 @@
         <div><div class="k">Formato</div><div class="v">Reels 9:16, fala pra câmera</div></div>
         <div><div class="k">Duração</div><div class="v">40 a 50 s</div></div>
         <div><div class="k">Quem grava</div><div class="v">Dr. Hilton</div></div>
-        <div><div class="k">Campanha</div><div class="v">C · Peyronie na Meta</div></div>
+        <div><div class="k">Etapa e campanha</div><div class="v">L · Distribuição (Peyronie)</div></div>
       </div>
       <div class="tbl-wrap"><table class="script">
         <thead><tr><th>Momento</th><th>Fala</th><th>Na tela</th></tr></thead>
@@ -1283,7 +1336,7 @@
         <div><div class="k">Formato</div><div class="v">Reels 9:16, fala + ilustração</div></div>
         <div><div class="k">Duração</div><div class="v">35 a 45 s</div></div>
         <div><div class="k">Quem grava</div><div class="v">Dr. Hilton (ilustração na edição)</div></div>
-        <div><div class="k">Campanha</div><div class="v">A · UroFill®</div></div>
+        <div><div class="k">Etapa e campanha</div><div class="v">L · Distribuição (UroFill®)</div></div>
       </div>
       <div class="tbl-wrap"><table class="script">
         <thead><tr><th>Momento</th><th>Fala</th><th>Na tela</th></tr></thead>
@@ -1304,7 +1357,7 @@
         <div><div class="k">Formato</div><div class="v">Reels 9:16, fala + print</div></div>
         <div><div class="k">Duração</div><div class="v">25 a 35 s</div></div>
         <div><div class="k">Quem grava</div><div class="v">Dr. Hilton</div></div>
-        <div><div class="k">Campanha</div><div class="v">A e C, no público quente</div></div>
+        <div><div class="k">Etapa e campanha</div><div class="v">T · A e C, no público quente</div></div>
       </div>
       <div class="tbl-wrap"><table class="script">
         <thead><tr><th>Momento</th><th>Fala</th><th>Na tela</th></tr></thead>
@@ -1325,7 +1378,7 @@
         <div><div class="k">Formato</div><div class="v">Reels 9:16, áudio + legenda</div></div>
         <div><div class="k">Duração</div><div class="v">25 a 35 s</div></div>
         <div><div class="k">Quem grava</div><div class="v">Paciente (áudio) + Dr. Hilton</div></div>
-        <div><div class="k">Campanha</div><div class="v">A · UroFill®</div></div>
+        <div><div class="k">Etapa e campanha</div><div class="v">T · A, formulário de UroFill®</div></div>
       </div>
       <div class="tbl-wrap"><table class="script">
         <thead><tr><th>Momento</th><th>Fala</th><th>Na tela</th></tr></thead>
@@ -1556,13 +1609,13 @@
     <div class="criteria is-3">
       <div class="card"><span class="crit-n">01</span><h3>O mês 1 é calibragem, não fechamento.</h3><p>No primeiro mês ligamos o CRM, calibramos público, testamos criativos e mapeamos as objeções que chegam pelo WhatsApp. É a fundação: os resultados consistentes aparecem a partir do mês 2, quando a campanha já aprendeu.</p></div>
       <div class="card"><span class="crit-n">02</span><h3>O lead de tráfego não chega te conhecendo.</h3><p>Quem vem por indicação já chega confiando. Quem vem do anúncio está te descobrindo agora: vai pesquisar, comparar e perguntar preço. Por isso a autoridade entra primeiro e o atendimento caminha junto: a velocidade e a forma de responder no WhatsApp decidem boa parte do resultado.</p></div>
-      <div class="card"><span class="crit-n">03</span><h3>Verba enxuta pede foco.</h3><p>Com R$ 3 mil de mídia por mês, o volume é limitado, principalmente no Peyronie. Por isso a verba fica em dois procedimentos e segue o custo por consulta. Preferimos dizer isso agora do que prometer volume que não vamos entregar.</p></div>
+      <div class="card"><span class="crit-n">03</span><h3>Verba enxuta pede foco.</h3><p>Com R$ 3 mil de mídia por mês, o volume é limitado, principalmente no Peyronie. Por isso a verba fica em dois procedimentos, com 80% na conversão, e segue o custo por consulta. Preferimos dizer isso agora do que prometer volume que não vamos entregar.</p></div>
     </div>
 
     <h3 class="sub-h">O que cada mês traz</h3>
     <div class="months">
-      <div class="card"><div class="k">Mês 1</div><h3>Base de comparação</h3><p>Campanhas no ar (UroFill® e Peyronie na Meta, busca no Google), formulário de 3 perguntas, CRM recebendo os leads e atendimento no novo roteiro. Os 4 vídeos já gravados entram editados e os primeiros roteiros são gravados. O foco é medir lead → consulta → procedimento.</p></div>
-      <div class="card"><div class="k">Mês 2</div><h3>Otimização</h3><p>Com os dados do mês 1, a verba vai pro que gera consulta, não só lead. Ajuste de público e de criativos, perfil reestruturado, primeiros fechamentos registrados no CRM e o Peyronie começando a ir pra fora de Brasília, como você sugeriu.</p></div>
+      <div class="card"><div class="k">Mês 1</div><h3>Base de comparação</h3><p>O funil KLT no ar desde o início: distribuição de vídeos na Meta (K e L), formulário de UroFill® e de Peyronie e busca no Google (T). CRM recebendo os leads e atendimento no novo roteiro. Os 4 vídeos já gravados entram editados e os primeiros roteiros são gravados. O foco é medir lead → consulta → procedimento.</p></div>
+      <div class="card"><div class="k">Mês 2</div><h3>Otimização</h3><p>Com os dados do mês 1, a verba vai pro que gera consulta, não só lead. Ajuste de público e de criativos, público quente maior com quem assistiu aos vídeos, perfil reestruturado, primeiros fechamentos registrados no CRM e o Peyronie começando a ir pra fora de Brasília, como você sugeriu.</p></div>
       <div class="card"><div class="k">Mês 3 em diante</div><h3>Consolidação</h3><p>Página de Peyronie ajustada pra decisão, verba concentrada no que fecha e, depois de validar Peyronie e UroFill®, a entrada de disfunção erétil e reposição hormonal.</p></div>
     </div>
 
@@ -1580,7 +1633,7 @@
       <div class="rung"><span class="n"></span><div><b>Regras do CFM</b><span>Respaldo do UroFill® (registro do produto, protocolo e termo de consentimento), consulta à Codame do CRM-DF sobre o nome da marca em anúncio e se há RQE de área de atuação em andrologia (seção 3.2).</span></div></div>
       <div class="rung"><span class="n"></span><div><b>Conta de antes e depois</b><span>O teste combinado no onboarding segue as regras do CFM: fotos em conjunto, com evoluções boas e ruins, caráter educativo e sem identificar o paciente.</span></div></div>
       <div class="rung"><span class="n"></span><div><b>Atendimento</b><span>Quem segue o manual da aba Comercial e se a secretária online dedicada ao WhatsApp vai ser contratada.</span></div></div>
-      <div class="rung"><span class="n"></span><div><b>Verba entre Google e Meta</b><span>O ponto de partida da divisão dos R$ 3 mil, revisto toda semana pelo custo por consulta. O Google depende do acesso à conta.</span></div></div>
+      <div class="rung"><span class="n"></span><div><b>Verba</b><span>Dos R$ 3 mil, 80% na conversão (formulário na Meta e Google) e 20% na distribuição (K e L), com a divisão entre Google e Meta revista toda semana pelo custo por consulta. O Google depende do acesso à conta.</span></div></div>
       <div class="rung"><span class="n"></span><div><b>Gravação</b><span>Uma sessão por mês pros 6 vídeos da aba Roteiros, e quais avaliações da Doctoralia e do Google podem ser usadas.</span></div></div>
       <div class="rung"><span class="n"></span><div><b>Perfil</b><span>Escolher uma das 3 bios e montar os destaques e os fixados da aba Estruturação do perfil.</span></div></div>
     </div>
@@ -1626,6 +1679,8 @@
       <div><dt>CRM</dt><dd>Onde cada lead fica registrado, com a etapa em que está: respondeu, agendou, compareceu, fechou.</dd></div>
       <div><dt>MQL e SQL</dt><dd>MQL é o lead que tem a dor que o Dr. Hilton resolve; SQL é o que passou pelo atendimento e agendou a consulta.</dd></div>
       <div><dt>Público quente (remarketing)</dt><dd>Quem interagiu com o perfil ou com os anúncios nos últimos 30 dias e volta a ver anúncios.</dd></div>
+      <div><dt>Funil KLT</dt><dd>Conhecer, gostar e confiar (<em>Know, Like, Trust</em>): as três etapas que o paciente percorre até agendar, cada uma com conteúdo e campanha próprios.</dd></div>
+      <div><dt>Distribuição</dt><dd>Campanha que leva vídeo a mais gente sem pedir o contato. É o que roda no K e no L.</dd></div>
       <div><dt>Criativo</dt><dd>A peça do anúncio: o vídeo ou o carrossel.</dd></div>
       <div><dt>Fase de aprendizado</dt><dd>As primeiras semanas de uma campanha, em que a plataforma testa públicos e o custo oscila mais.</dd></div>
       <div><dt>RQE</dt><dd>Registro de Qualificação de Especialista: o número que permite ao médico se apresentar como especialista.</dd></div>
